@@ -1,6 +1,7 @@
 <?php
 
 require("config.php");
+require("helpdesks.php");
 
 function safe_get($param)
 {
@@ -24,6 +25,10 @@ if (!isset($languages[$lang])) {
 	$lang = $default_lang;
 }
 $text = $texts[$lang];
+
+if (!isset($helpdesks[$entityid])) {
+	$entityid = '';
+}
 
 ?>
 <html>
@@ -99,8 +104,25 @@ function print_error($lang, $h, $entityid, $errorurl_code, $errorurl_ts, $erroru
 ?>
 <<?= $h ?>><?= $header ?></<?= $h ?>>
 <?= $body ?>
-<p><?= $text['contact_information'] ?>
 <?php
+
+	if (isset($helpdesks[$entityid][$lang]['displayname']) && $helpdesks[$entityid][$lang]['displayname'] &&
+	    isset($helpdesks[$entityid]['contactperson_email']) && $helpdesks[$entityid]['contactperson_email']) {
+		$displayname = $helpdesks[$entityid][$lang]['displayname'];
+		$contactperson_email = $helpdesks[$entityid]['contactperson_email'];
+		$contact_text = preg_replace(array(
+				'/DISPLAYNAME/',
+				'/EMAIL/'
+			), array(
+				'<b>' . $displayname . '</b>',
+				'<a href="mailto:' . $contactperson_email . '">' . $contactperson_email . '</a>',
+			), $text['contact_information']);
+
+?>
+	<p><?= $contact_text ?>
+<?php
+
+	}
 
 	if ($errorurl_ctx && $errorurl_ctx != 'ERRORURL_CTX') {
 
