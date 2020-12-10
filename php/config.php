@@ -1,7 +1,5 @@
 <?php
 
-$title = 'SWAMID errorURL';
-
 $logo = 'logo.png';
 
 date_default_timezone_set('UTC');
@@ -21,21 +19,36 @@ $languages = array(
 $texts = array(
 	'sv' => array(
 		'contact_information' => 'Supporten för din organisation, DISPLAYNAME, kan nås via EMAIL.',
-		'errorurl_code_not_set_header' => 'Problem vid inloggning',
-		'errorurl_code_not_set_text' => 'Inloggning till tjänsten misslyckades. Se nedan för möjliga orsaker och åtgärder.',
 		'technical_information' => 'Teknisk information',
 		'footer' => '<hr><i>Detta är en generell felsida för federerad inloggning (errorURL) inom <a href="https://www.swamid.se/">SWAMID</a>. Varje organisation kan skapa en egen felsida. Använd gärna denna sida som inspiration. Kontakta operations@swamid.se för mer information om errorURL i SWAMID.</i>',
 	),
 	'en' => array(
 		'contact_information' => 'The support of your organisation, DISPLAYNAME, can be reached at EMAIL.',
-		'errorurl_code_not_set_header' => 'Login failed',
-		'errorurl_code_not_set_text' => 'Login failed at the service you tried to access. Please see below for possible reasons and actions.',
 		'technical_information' => 'Technical information',
 		'footer' => '<hr><i>This is a generic error page for federated login (errorURL) within <a href="https://www.swamid.se/">SWAMID</a>. Every organisation in SWAMID may design and publish their own error page. Feel free to use this page as inspiration. Please contact operations@swamid.se for more information regarding errorURL in SWAMID.</i>',
 	),
 );
 
 $errorurl_errors = array(
+	'ERRORURL_CODE' => array(
+		'sv' => array(
+			'header' => '
+				Problem vid inloggning
+				',
+			'body' => '
+				<p>Inloggning till tjänsten misslyckades. Se nedan för möjliga orsaker och åtgärder.
+				',
+		),
+		'en' => array(
+			'header' => '
+				Login failed
+				',
+			'body' => '
+				<p>Login failed at the service you tried to access. Please see below for possible reasons and actions.
+				',
+		),
+	),
+
 	'IDENTIFICATION_FAILURE' => array(
 		'sv' => array(
 			'header' => '
