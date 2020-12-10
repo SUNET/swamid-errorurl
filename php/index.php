@@ -15,9 +15,9 @@ function trim_ws($param)
 
 function print_header($lang, $errorurl_code, $errorurl_rp, $errorurl_ts, $errorurl_tid, $errorurl_ctx)
 {
+	global $languages;
 	global $errorurl_errors;
 	global $logo;
-	global $languages;
 	global $entityid;
 
 	$title = get_errorcode_text($lang, $errorurl_code, $errorurl_ctx, 'header');
@@ -105,9 +105,8 @@ function get_errorcode_text($lang, $errorurl_code, $errorurl_ctx, $text_id)
 
 function print_error($lang, $print_sub_header, $entityid, $errorurl_code, $errorurl_ts, $errorurl_rp, $errorurl_tid, $errorurl_ctx)
 {
+	global $texts;
 	global $errorurl_errors;
-	global $helpdesks;
-	global $text;
 
 	$errorurl_error = $errorurl_errors[$errorurl_code][$lang];
 
@@ -136,7 +135,7 @@ function print_error($lang, $print_sub_header, $entityid, $errorurl_code, $error
 			), array(
 				'<b>' . $displayname . '</b>',
 				'<a href="mailto:' . $contactperson_email . '">' . $contactperson_email . '</a>',
-			), $text['contact_information']);
+			), $texts[$lang]['contact_information']);
 
 ?>
 	<p><?= $contact_text ?>
@@ -148,10 +147,10 @@ function print_error($lang, $print_sub_header, $entityid, $errorurl_code, $error
 	if ($errorurl_ctx && $errorurl_ctx != 'ERRORURL_CTX') {
 
 ?>
-<p><?= $text['technical_information'] ?>:<br>
+<p><?= $texts[$lang]['technical_information'] ?>:<br>
 <p class="ml-4">
 <code>
-ERRORURL_TS:  <?= $errorurl_ts ?> (<?= date(DATE_ATOM, $errorurl_ts) ?>)<br>
+ERRORURL_TS:  <?= $errorurl_ts ?><?= (is_numeric($errorurl_ts)) ? ' (' . date(DATE_ATOM, $errorurl_ts) . ')' : '' ?><br>
 ERRORURL_RP:  <?= $errorurl_rp ?><br>
 ERRORURL_TID: <?= $errorurl_tid ?><br>
 ERRORURL_CTX: <?= $errorurl_ctx ?>
@@ -174,7 +173,10 @@ $errorurl_ctx	= safe_get('errorurl_ctx');
 if (!isset($languages[$lang])) {
 	$lang = $default_lang;
 }
-$text = $texts[$lang];
+
+if (!in_array($errorurl_code, array('IDENTIFICATION_FAILURE', 'AUTHENTICATION_FAILURE', 'AUTHORIZATION_FAILURE', 'OTHER_ERROR'))) {
+	$errorurl_code = 'ERRORURL_CODE';
+}
 
 if (in_array($errorurl_code, array('IDENTIFICATION_FAILURE', 'AUTHENTICATION_FAILURE', 'AUTHORIZATION_FAILURE', 'OTHER_ERROR'))) {
 	print_header($lang, $errorurl_code, $errorurl_rp, $errorurl_ts, $errorurl_tid, $errorurl_ctx);
@@ -197,7 +199,7 @@ if (in_array($errorurl_code, array('IDENTIFICATION_FAILURE', 'AUTHENTICATION_FAI
 }
 
 ?>
-<?= $text['footer'] ?>
+<?= $texts[$lang]['footer'] ?>
 
 </div>
 </body>
