@@ -5,8 +5,8 @@ include("../helpdesks.php");
 
 function helpdesk_cmp($a, $b)
 {
-    if (isset($a['sv']['displayname']) && isset($b['sv']['displayname']) && $a['sv']['displayname'] != $b['sv']['displayname']) {
-	    return ($a['sv']['displayname'] < $b['sv']['displayname']) ? -1 : 1;
+    if (isset($a['displayname']['sv']) && isset($b['displayname']['sv']) && $a['displayname']['sv'] != $b['displayname']['sv']) {
+	    return ($a['displayname']['sv'] < $b['displayname']['sv']) ? -1 : 1;
     } else {
 	    return ($a < $b) ? -1 : 1;
     }
@@ -32,10 +32,10 @@ $title = "IdP errorURL list";
 
 foreach ($helpdesks as $entityid => $data) {
 	$descr = $entityid;
-	if (isset($data['sv']['displayname'])) {
-		$desc = $data['sv']['displayname'];
-	} else if (isset($data['en']['displayname'])) {
-		$desc = $data['en']['displayname'];
+	if (isset($data['displayname']['sv'])) {
+		$desc = $data['displayname']['sv'];
+	} else if (isset($data['displayname']['en'])) {
+		$desc = $data['displayname']['en'];
 	}
 
 	if (isset($data['errorurl'])) {

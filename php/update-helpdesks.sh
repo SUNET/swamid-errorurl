@@ -30,20 +30,19 @@ EOF
 			if [ -n "$last_entityid" ] ; then
 				echo "	'$last_entityid' => array("
 
+				echo "		'displayname' => array("
 				if [ -n "$displayname_sv" ] ; then
-					echo "		'sv' => array("
 					if [ -n "$displayname_sv" ] ; then
-						echo "			'displayname' => '$displayname_sv',"
+						echo "			'sv' => '$displayname_sv',"
 					fi
-					echo "		),"
 				fi
 				if [ -n "$displayname_en" ] ; then
-					echo "		'en' => array("
 					if [ -n "$displayname_en" ] ; then
-						echo "			'displayname' => '$displayname_en',"
+						echo "			'en' => '$displayname_en',"
 					fi
-					echo "		),"
 				fi
+				echo "		),"
+
 				[ -n "$contactperson_email" ] && echo "		'contactperson_email' => '$contactperson_email',"
 				[ -n "$errorurl" ] && echo "		'errorurl' => '$errorurl',"
 				echo "	),"
