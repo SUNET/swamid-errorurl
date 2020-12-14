@@ -25,7 +25,7 @@ function print_header($lang, $errorurl_code, $errorurl_rp, $errorurl_ts, $erroru
 	global $helpdesks;
 
 	$title = get_errorcode_header($lang, $errorurl_code, $errorurl_ctx);
-	$logo = $basic_info['logo']->get_lang($lang);
+	$logo = $basic_info['logo']->get($lang);
 
 if (!isset($helpdesks[$entityid])) {
 	$entityid = '';
@@ -60,7 +60,7 @@ if (!isset($helpdesks[$entityid])) {
 		$first = false;
 
 ?>
-<a href="?lang=<?= $l ?><?= ($entityid) ? "&entityid=$entityid" : "" ?><?= ($errorurl_code) ? "&errorurl_code=$errorurl_code" : "" ?><?= ($errorurl_ts) ? "&errorurl_ts=$errorurl_ts" : "" ?><?= ($errorurl_rp) ? "&errorurl_rp=$errorurl_rp" : "" ?><?= ($errorurl_tid) ? "&errorurl_tid=$errorurl_tid" : "" ?><?= ($errorurl_ctx) ? "&errorurl_ctx=$errorurl_ctx" : "" ?>"><img src="<?= $basic_info['lang_flag']->get_lang($l) ?>" alt=""> <span><?= $basic_info['lang_select']->get_lang($l) ?></span></a>
+<a href="?lang=<?= $l ?><?= ($entityid) ? "&entityid=$entityid" : "" ?><?= ($errorurl_code) ? "&errorurl_code=$errorurl_code" : "" ?><?= ($errorurl_ts) ? "&errorurl_ts=$errorurl_ts" : "" ?><?= ($errorurl_rp) ? "&errorurl_rp=$errorurl_rp" : "" ?><?= ($errorurl_tid) ? "&errorurl_tid=$errorurl_tid" : "" ?><?= ($errorurl_ctx) ? "&errorurl_ctx=$errorurl_ctx" : "" ?>"><img src="<?= $basic_info['lang_flag']->get($l) ?>" alt=""> <span><?= $basic_info['lang_select']->get($l) ?></span></a>
 <?php
 
 	}
@@ -140,8 +140,8 @@ function print_error($lang, $print_sub_header, $entityid, $errorurl_code, $error
 	$header = get_errorcode_header($lang, $errorurl_code, $errorurl_ctx);
 	$body = get_errorcode_body($lang, $errorurl_code, $errorurl_ctx);
 
-	$contact_information = $basic_info['contact_information']->get_lang($lang);
-	$technical_information = $basic_info['technical_information']->get_lang($lang);
+	$contact_information = $basic_info['contact_information']->get($lang);
+	$technical_information = $basic_info['technical_information']->get($lang);
 
 	if ($print_sub_header) {
 ?>
@@ -230,7 +230,7 @@ if (in_array($errorurl_code, array('IDENTIFICATION_FAILURE', 'AUTHENTICATION_FAI
 }
 
 ?>
-<?= $basic_info['footer']->get_lang($lang) ?>
+<?= $basic_info['footer']->get($lang) ?>
 
 </div>
 </body>

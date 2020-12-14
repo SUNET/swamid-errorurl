@@ -10,14 +10,14 @@ class Text
 		$this->languages = array();
 	}
 
-	function add_lang($lang, $text)
+	function add($lang, $text)
 	{
 		$this->languages[$lang] = $text;
 	}
 
-	function get_lang($lang)
+	function get($lang)
 	{
-		return (isset($this->languages[$lang])) ? $this->languages[$lang] : "x";
+		return (isset($this->languages[$lang])) ? $this->languages[$lang] : "";
 	}
 }
 
@@ -61,12 +61,12 @@ class ErrorURL_Error_ctx
 
 	function get_header($lang)
 	{
-		return $this->header->get_lang($lang);
+		return $this->header->get($lang);
 	}
 
 	function get_body($lang)
 	{
-		return $this->body->get_lang($lang);
+		return $this->body->get($lang);
 	}
 }
 
@@ -100,12 +100,12 @@ class ErrorURL_Error
 
 	function get_header($lang)
 	{
-		return $this->header->get_lang($lang);
+		return $this->header->get($lang);
 	}
 
 	function get_body($lang)
 	{
-		return $this->body->get_lang($lang);
+		return $this->body->get($lang);
 	}
 
 	function add_ctx($id, $ctx)
@@ -123,38 +123,38 @@ $basic_info = array();
 
 // basic_info->logo
 $text = new Text();
-$text->add_lang('sv', $basic_info_logo_sv);
-$text->add_lang('en', $basic_info_logo_en);
+$text->add('sv', $basic_info_logo_sv);
+$text->add('en', $basic_info_logo_en);
 $basic_info['logo'] = $text;
 
 // basic_info->lang_flag
 $text = new Text();
-$text->add_lang('sv', $basic_info_lang_flag_sv);
-$text->add_lang('en', $basic_info_lang_flag_en);
+$text->add('sv', $basic_info_lang_flag_sv);
+$text->add('en', $basic_info_lang_flag_en);
 $basic_info['lang_flag'] = $text;
 
 // basic_info->lang_select
 $text = new Text();
-$text->add_lang('sv', $basic_info_lang_select_sv);
-$text->add_lang('en', $basic_info_lang_select_en);
+$text->add('sv', $basic_info_lang_select_sv);
+$text->add('en', $basic_info_lang_select_en);
 $basic_info['lang_select'] = $text;
 
 // basic_info->contact_information
 $text = new Text();
-$text->add_lang('sv', $basic_info_contact_information_sv);
-$text->add_lang('en', $basic_info_contact_information_en);
+$text->add('sv', $basic_info_contact_information_sv);
+$text->add('en', $basic_info_contact_information_en);
 $basic_info['contact_information'] = $text;
 
 // basic_info->technical_information
 $text = new Text();
-$text->add_lang('sv', $basic_info_technical_information_sv);
-$text->add_lang('en', $basic_info_technical_information_en);
+$text->add('sv', $basic_info_technical_information_sv);
+$text->add('en', $basic_info_technical_information_en);
 $basic_info['technical_information'] = $text;
 
 // basic_info->footer
 $text = new Text();
-$text->add_lang('sv', $basic_info_footer_sv);
-$text->add_lang('en', $basic_info_footer_en);
+$text->add('sv', $basic_info_footer_sv);
+$text->add('en', $basic_info_footer_en);
 $basic_info['footer'] = $text;
 
 $errorurl_errors = array();
@@ -163,13 +163,13 @@ $errorurl_errors = array();
 $errorurl_error = new ErrorURL_Error('ERRORURL_CODE');
 
 $text = new Text();
-$text->add_lang('sv', $ee_errorurl_code_header_sv);
-$text->add_lang('en', $ee_errorurl_code_header_en);
+$text->add('sv', $ee_errorurl_code_header_sv);
+$text->add('en', $ee_errorurl_code_header_en);
 $errorurl_error->set_header($text);
 
 $text = new Text();
-$text->add_lang('sv', $ee_errorurl_code_body_sv);
-$text->add_lang('en', $ee_errorurl_code_body_en);
+$text->add('sv', $ee_errorurl_code_body_sv);
+$text->add('en', $ee_errorurl_code_body_en);
 $errorurl_error->set_body($text);
 
 $errorurl_errors[$errorurl_error->get_id()] = $errorurl_error;
@@ -178,13 +178,13 @@ $errorurl_errors[$errorurl_error->get_id()] = $errorurl_error;
 $errorurl_error = new ErrorURL_Error('IDENTIFICATION_FAILURE');
 
 $text = new Text();
-$text->add_lang('sv', $ee_identification_failure_header_sv);
-$text->add_lang('en', $ee_identification_failure_header_en);
+$text->add('sv', $ee_identification_failure_header_sv);
+$text->add('en', $ee_identification_failure_header_en);
 $errorurl_error->set_header($text);
 
 $text = new Text();
-$text->add_lang('sv', $ee_identification_failure_body_sv);
-$text->add_lang('en', $ee_identification_failure_body_en);
+$text->add('sv', $ee_identification_failure_body_sv);
+$text->add('en', $ee_identification_failure_body_en);
 $errorurl_error->set_body($text);
 
 $errorurl_errors[$errorurl_error->get_id()] = $errorurl_error;
@@ -193,13 +193,13 @@ $errorurl_errors[$errorurl_error->get_id()] = $errorurl_error;
 $errorurl_error = new ErrorURL_Error('AUTHENTICATION_FAILURE');
 
 $text = new Text();
-$text->add_lang('sv', $ee_authentication_failure_header_sv);
-$text->add_lang('en', $ee_authentication_failure_header_en);
+$text->add('sv', $ee_authentication_failure_header_sv);
+$text->add('en', $ee_authentication_failure_header_en);
 $errorurl_error->set_header($text);
 
 $text = new Text();
-$text->add_lang('sv', $ee_authentication_failure_body_sv);
-$text->add_lang('en', $ee_authentication_failure_body_en);
+$text->add('sv', $ee_authentication_failure_body_sv);
+$text->add('en', $ee_authentication_failure_body_en);
 $errorurl_error->set_body($text);
 
 $errorurl_errors[$errorurl_error->get_id()] = $errorurl_error;
@@ -208,26 +208,26 @@ $errorurl_errors[$errorurl_error->get_id()] = $errorurl_error;
 $errorurl_error = new ErrorURL_Error('AUTHORIZATION_FAILURE');
 
 $text = new Text();
-$text->add_lang('sv', $ee_authorization_failure_header_sv);
-$text->add_lang('en', $ee_authorization_failure_header_en);
+$text->add('sv', $ee_authorization_failure_header_sv);
+$text->add('en', $ee_authorization_failure_header_en);
 $errorurl_error->set_header($text);
 
 $text = new Text();
-$text->add_lang('sv', $ee_authorization_failure_body_sv);
-$text->add_lang('en', $ee_authorization_failure_body_en);
+$text->add('sv', $ee_authorization_failure_body_sv);
+$text->add('en', $ee_authorization_failure_body_en);
 $errorurl_error->set_body($text);
 
 // AUTHORIZATION_FAILURE verified
 $errorurl_error_ctx = new ErrorURL_Error_ctx('verified');
 
 $text = new Text();
-$text->add_lang('sv', $ee_authorization_failure_ctx_verified_header_sv);
-$text->add_lang('en', $ee_authorization_failure_ctx_verified_header_en);
+$text->add('sv', $ee_authorization_failure_ctx_verified_header_sv);
+$text->add('en', $ee_authorization_failure_ctx_verified_header_en);
 $errorurl_error_ctx->set_header($text);
 
 $text = new Text();
-$text->add_lang('sv', $ee_authorization_failure_ctx_verified_body_sv);
-$text->add_lang('en', $ee_authorization_failure_ctx_verified_body_en);
+$text->add('sv', $ee_authorization_failure_ctx_verified_body_sv);
+$text->add('en', $ee_authorization_failure_ctx_verified_body_en);
 $errorurl_error_ctx->set_body($text);
 
 $errorurl_error_ctx->add_identifier('http://www.swamid.se/policy/assurance/al3');
@@ -240,13 +240,13 @@ $errorurl_error->add_ctx($errorurl_error_ctx->get_id(), $errorurl_error_ctx);
 $errorurl_error_ctx = new ErrorURL_Error_ctx('confirmed');
 
 $text = new Text();
-$text->add_lang('sv', $ee_authorization_failure_ctx_confirmed_header_sv);
-$text->add_lang('en', $ee_authorization_failure_ctx_confirmed_header_en);
+$text->add('sv', $ee_authorization_failure_ctx_confirmed_header_sv);
+$text->add('en', $ee_authorization_failure_ctx_confirmed_header_en);
 $errorurl_error_ctx->set_header($text);
 
 $text = new Text();
-$text->add_lang('sv', $ee_authorization_failure_ctx_confirmed_body_sv);
-$text->add_lang('en', $ee_authorization_failure_ctx_confirmed_body_en);
+$text->add('sv', $ee_authorization_failure_ctx_confirmed_body_sv);
+$text->add('en', $ee_authorization_failure_ctx_confirmed_body_en);
 $errorurl_error_ctx->set_body($text);
 
 $errorurl_error_ctx->add_identifier('http://www.swamid.se/policy/assurance/al2');
@@ -259,13 +259,13 @@ $errorurl_error->add_ctx($errorurl_error_ctx->get_id(), $errorurl_error_ctx);
 $errorurl_error_ctx = new ErrorURL_Error_ctx('non_confirmed');
 
 $text = new Text();
-$text->add_lang('sv', $ee_authorization_failure_ctx_non_confirmed_header_sv);
-$text->add_lang('en', $ee_authorization_failure_ctx_non_confirmed_header_en);
+$text->add('sv', $ee_authorization_failure_ctx_non_confirmed_header_sv);
+$text->add('en', $ee_authorization_failure_ctx_non_confirmed_header_en);
 $errorurl_error_ctx->set_header($text);
 
 $text = new Text();
-$text->add_lang('sv', $ee_authorization_failure_ctx_non_confirmed_body_sv);
-$text->add_lang('en', $ee_authorization_failure_ctx_non_confirmed_body_en);
+$text->add('sv', $ee_authorization_failure_ctx_non_confirmed_body_sv);
+$text->add('en', $ee_authorization_failure_ctx_non_confirmed_body_en);
 $errorurl_error_ctx->set_body($text);
 
 $errorurl_error_ctx->add_identifier('http://www.swamid.se/policy/assurance/al1');
@@ -279,13 +279,13 @@ $errorurl_errors[$errorurl_error->get_id()] = $errorurl_error;
 $errorurl_error = new ErrorURL_Error('OTHER_ERROR');
 
 $text = new Text();
-$text->add_lang('sv', $ee_other_error_header_sv);
-$text->add_lang('en', $ee_other_error_header_en);
+$text->add('sv', $ee_other_error_header_sv);
+$text->add('en', $ee_other_error_header_en);
 $errorurl_error->set_header($text);
 
 $text = new Text();
-$text->add_lang('sv', $ee_other_error_body_sv);
-$text->add_lang('en', $ee_other_error_body_en);
+$text->add('sv', $ee_other_error_body_sv);
+$text->add('en', $ee_other_error_body_en);
 $errorurl_error->set_body($text);
 
 $errorurl_errors[$errorurl_error->get_id()] = $errorurl_error;

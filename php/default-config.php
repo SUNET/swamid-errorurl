@@ -93,7 +93,6 @@ $ee_authorization_failure_body_en = '
 	<p><b>Some specific entitlements</b>
 	<br>Entitlements are specific privileges at specific services. If you are missing entitlements that you think you should have (e.g. you should be able to access this service), please contact IT Service Desk to resolve this.
 
-
 	<p>If you think you should have access, please contact support at your institution and include the name of the service you tried to access, any privileges that were noted as missing and, if possible, a screenshot of the error message at the service (including the address bar at the top of the web browser) and also of this message.
 	';
 
