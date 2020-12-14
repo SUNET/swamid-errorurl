@@ -38,10 +38,10 @@ function errorurl_replace($errorurl, $errorurl_code, $errorurl_ctx)
 				'/ERRORURL_TID/',
 				'/ERRORURL_CTX/',
 			), array(
-				time(),
+				 1607969220, // time(),
 				'https://www.student.ladok.se/student-sp',
-				'error-' . uniqid(),
-				$errorurl_ctx,
+				'error-' . '5fd7a9c448086', //uniqid(),
+				urlencode($errorurl_ctx),
 			),
 			$errorurl);
 	}
