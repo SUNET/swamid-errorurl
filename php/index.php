@@ -60,7 +60,7 @@ if (!isset($helpdesks[$entityid])) {
 		$first = false;
 
 ?>
-<a href="?lang=<?= $l ?><?= ($entityid) ? "&entityid=$entityid" : "" ?><?= ($errorurl_code) ? "&errorurl_code=$errorurl_code" : "" ?><?= ($errorurl_ts) ? "&errorurl_ts=$errorurl_ts" : "" ?><?= ($errorurl_rp) ? "&errorurl_rp=$errorurl_rp" : "" ?><?= ($errorurl_tid) ? "&errorurl_tid=$errorurl_tid" : "" ?><?= ($errorurl_ctx) ? "&errorurl_ctx=$errorurl_ctx" : "" ?>"><img src="<?= $basic_info['lang_flag']->get($l) ?>" alt=""> <span><?= $basic_info['lang_select']->get($l) ?></span></a>
+<a href="?lang=<?= $l ?><?= ($entityid) ? "&entityid=" . urlencode($entityid) : "" ?><?= ($errorurl_code) ? "&errorurl_code=" . urlencode($errorurl_code) : "" ?><?= ($errorurl_ts) ? "&errorurl_ts=" . urlencode($errorurl_ts) : "" ?><?= ($errorurl_rp) ? "&errorurl_rp=" . urlencode($errorurl_rp) : "" ?><?= ($errorurl_tid) ? "&errorurl_tid=" . urlencode($errorurl_tid) : "" ?><?= ($errorurl_ctx) ? "&errorurl_ctx=" . urlencode($errorurl_ctx) : "" ?>"><img src="<?= $basic_info['lang_flag']->get($l) ?>" alt=""> <span><?= $basic_info['lang_select']->get($l) ?></span></a>
 <?php
 
 	}
