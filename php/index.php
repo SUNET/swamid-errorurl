@@ -6,7 +6,7 @@ require("helpdesks.php");
 
 function safe_get($param)
 {
-	return (isset($_GET[$param]) ? htmlentities($_GET[$param], ENT_QUOTES) : "");
+	return (isset($_GET[$param]) ? $_GET[$param] : "");
 }
 
 function trim_ws($param)
@@ -179,10 +179,10 @@ function print_error($lang, $print_sub_header, $entityid, $errorurl_code, $error
 <p><?= $technical_information ?>:<br>
 <p class="ml-4">
 <code>
-ERRORURL_TS:  <?= $errorurl_ts ?><?= (is_numeric($errorurl_ts)) ? ' (' . date(DATE_ATOM, $errorurl_ts) . ')' : '' ?><br>
-ERRORURL_RP:  <?= $errorurl_rp ?><br>
-ERRORURL_TID: <?= $errorurl_tid ?><br>
-ERRORURL_CTX: <?= $errorurl_ctx ?>
+ERRORURL_TS:  <?= htmlentities($errorurl_ts, ENT_QUOTES) ?><?= (is_numeric($errorurl_ts)) ? ' (' . date(DATE_ATOM, $errorurl_ts) . ')' : '' ?><br>
+ERRORURL_RP:  <?= htmlentities($errorurl_rp, ENT_QUOTES) ?><br>
+ERRORURL_TID: <?= htmlentities($errorurl_tid, ENT_QUOTES) ?><br>
+ERRORURL_CTX: <?= htmlentities($errorurl_ctx, ENT_QUOTES) ?>
 
 </code>
 </p>

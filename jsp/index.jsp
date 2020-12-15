@@ -155,10 +155,10 @@ String print_error(LinkedHashMap<String, Text> basic_info, LinkedHashMap <String
 		output += "<p>" + technical_information + ":<br>\n" +
 			"<p class=\"ml-4\">\n" +
 			"<code>\n" +
-			"ERRORURL_TS:  " + errorurl_ts + readable_date + "<br>\n" +
-			"ERRORURL_RP:  " + errorurl_rp + "<br>\n" +
-			"ERRORURL_TID: " + errorurl_tid + "<br>\n" +
-			"ERRORURL_CTX: " + errorurl_ctx + "\n" +
+			"ERRORURL_TS:  " + safeHtml(errorurl_ts) + readable_date + "<br>\n" +
+			"ERRORURL_RP:  " + safeHtml(errorurl_rp) + "<br>\n" +
+			"ERRORURL_TID: " + safeHtml(errorurl_tid) + "<br>\n" +
+			"ERRORURL_CTX: " + safeHtml(errorurl_ctx) + "\n" +
 			"</code>\n" +
 			"</p>\n" +
 			"";
@@ -180,13 +180,13 @@ String safeHtml(String param)
 %>
 <%
 
-String lang		= safeHtml(request.getParameter("lang"));
-String entityid 	= safeHtml(request.getParameter("entityid"));
-String errorurl_code	= safeHtml(request.getParameter("errorurl_code"));
-String errorurl_ts	= safeHtml(request.getParameter("errorurl_ts"));
-String errorurl_rp	= safeHtml(request.getParameter("errorurl_rp"));
-String errorurl_tid	= safeHtml(request.getParameter("errorurl_tid"));
-String errorurl_ctx	= safeHtml(request.getParameter("errorurl_ctx"));
+String lang		= request.getParameter("lang");
+String entityid 	= request.getParameter("entityid");
+String errorurl_code	= request.getParameter("errorurl_code");
+String errorurl_ts	= request.getParameter("errorurl_ts");
+String errorurl_rp	= request.getParameter("errorurl_rp");
+String errorurl_tid	= request.getParameter("errorurl_tid");
+String errorurl_ctx	= request.getParameter("errorurl_ctx");
 
 if (!languages.contains(lang)) {
 	lang = default_lang;
