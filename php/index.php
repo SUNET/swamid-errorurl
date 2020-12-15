@@ -153,7 +153,6 @@ function print_error($lang, $print_sub_header, $entityid, $errorurl_code, $error
 
 <?php
 
-	print $entityid;
 	if (isset($helpdesks[$entityid]['displayname'][$lang]) && $helpdesks[$entityid]['displayname'][$lang] &&
 	    isset($helpdesks[$entityid]['contactperson_email']) && $helpdesks[$entityid]['contactperson_email']) {
 		$displayname = $helpdesks[$entityid]['displayname'][$lang];
