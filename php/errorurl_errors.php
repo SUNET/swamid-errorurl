@@ -1,5 +1,7 @@
 <?php
 
+require("config.php");
+
 class Text
 {
 	// 'sv'/'en' as key

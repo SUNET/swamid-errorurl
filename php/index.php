@@ -1,7 +1,5 @@
 <?php
 
-require("default-config.php");
-require("local-config.php");
 require("errorurl_errors.php");
 
 require("helpdesks.php");
