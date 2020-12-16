@@ -8,18 +8,33 @@ Please contact operations@swamid.se on any questions regarding this template.
 
 ## Installation
 
-The PHP version:
+The HTML version (in the html directory):
+
+1. Replace logo.png with your own logo
+1. Update at least DISPLAYNAME and EMAIL in all html files
+1. Upload the contents of html to, for example, https://saml-error.example.com
+1. Tell your federation operator to set the errorURL of your Identity Provider to https://saml-error.example.com/ERRORURL_CODE.html
+
+The PHP version (in the php directory):
 
 1. Replace logo.png with your own logo
 1. Update at least DISPLAYNAME and EMAIL in config.php
 1. Upload the contents of php to, for example, https://saml-error.example.com
 1. Tell your federation operator to set the errorURL of your Identity Provider to https://saml-error.example.com/?errorurl_code=ERRORURL_CODE&errorurl_ts=ERRORURL_TS&errorurl_rp=ERRORURL_RP&errorurl_tid=ERRORURL_TID&errorurl_ctx=ERRORURL_CTX
 
-The JSP version:
+The JSP version (in the jsp directory):
 
 1. Replace logo.png with your own logo
 1. Update at least DISPLAYNAME and EMAIL in config.jsp
 1. Upload the contents of jsp to, for example, https://saml-error.example.com
+1. Tell your federation operator to set the errorURL of your Identity Provider to https://saml-error.example.com/?errorurl_code=ERRORURL_CODE&errorurl_ts=ERRORURL_TS&errorurl_rp=ERRORURL_RP&errorurl_tid=ERRORURL_TID&errorurl_ctx=ERRORURL_CTX
+
+The .Net Core version (in the dotnetapp directory):
+
+1. Replace wwwroot/images/logo.png with your own logo
+1. Update at least DISPLAYNAME and EMAIL in Resources/Controllers/HomeController.\*.resx
+1. Optional, add a footer text in Resources/Controllers/HomeController.\*.resx
+1. Upload the published version of dotnetapp to, for example, https://saml-error.example.com
 1. Tell your federation operator to set the errorURL of your Identity Provider to https://saml-error.example.com/?errorurl_code=ERRORURL_CODE&errorurl_ts=ERRORURL_TS&errorurl_rp=ERRORURL_RP&errorurl_tid=ERRORURL_TID&errorurl_ctx=ERRORURL_CTX
 
 ## License

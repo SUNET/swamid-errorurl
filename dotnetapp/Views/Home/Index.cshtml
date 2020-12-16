@@ -1,0 +1,59 @@
+﻿@model Swamid.Errorurl.Models.ErrorViewModel
+
+@*@{
+    @ViewData["Title"]
+}*@
+
+@*<h1>Index</h1>*@
+
+<div>
+
+
+    @foreach (var err in Model.LoginError)
+    {
+        <h2>@err.Header</h2>
+        @foreach (var s in err.Body)
+        {
+            <p>@Html.Raw(s) </p>
+        }
+        @if (Model.Parameters.HaveDetails())
+        {
+            <p>@Html.DisplayFor(model => model.ContactInfo)</p>
+            <p>@Html.DisplayFor(model => model.TechnicalInfo)</p>
+            <div class="alert-warning">
+                @Html.Raw(Model.Parameters.GetDetails())
+            </div>
+        }
+    }
+    @*<dl class="row">
+
+           <dt class = "col-sm-2">
+                    @Html.DisplayNameFor(model => model.Body)
+                </dt>
+                <dd class = "col-sm-10">
+                    @Html.DisplayFor(model => model.Body)
+                </dd>
+                <dt class = "col-sm-2">
+                    @Html.DisplayNameFor(model => model.Footer)
+                </dt>
+                <dd class = "col-sm-10">
+                    @Html.DisplayFor(model => model.Footer)
+                </dd>
+                <dt class = "col-sm-2">
+                    @Html.DisplayNameFor(model => model.RequestId)
+                </dt>
+                <dd class = "col-sm-10">
+                    @Html.DisplayFor(model => model.RequestId)
+                </dd>
+                <dt class = "col-sm-2">
+                    @Html.DisplayNameFor(model => model.ShowRequestId)
+                </dt>
+                <dd class = "col-sm-10">
+                    @Html.DisplayFor(model => model.ShowRequestId)
+                </dd>
+        </dl>*@
+</div>
+@*<div>
+        @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+        <a asp-action="Index">Back to List</a>
+    </div>*@
