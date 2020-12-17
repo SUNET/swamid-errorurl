@@ -46,7 +46,7 @@ namespace Swamid.Errorurl.Controllers
             {
                 //Get specific error
                 LoginError e = le.Errors.Where(e => e.Type == query.errorurl_code).SingleOrDefault();
-                if ((query.errorurl_ctx + "" != "" && (query.errorurl_ctx + "").ToUpper() != "ERRORURL_CTX"))
+                if ((query.errorurl_ctx + "" != "" && (query.errorurl_ctx + "").ToUpper() != "errorurl_ctx"))
                 {
                     if (e.context !=null)
                     {

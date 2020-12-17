@@ -6,26 +6,57 @@
 
 @*<h1>Index</h1>*@
 
-<div>
+    <div>
 
 
-    @foreach (var err in Model.LoginError)
+        @foreach (var err in Model.LoginError)
     {
         <h2>@err.Header</h2>
         @foreach (var s in err.Body)
         {
-            <p>@Html.Raw(s) </p>
+        <p>@Html.Raw(s) </p>
         }
+        <p>@Html.DisplayFor(model => model.ContactInfo)</p>
         @if (Model.Parameters.HaveDetails())
         {
-            <p>@Html.DisplayFor(model => model.ContactInfo)</p>
-            <p>@Html.DisplayFor(model => model.TechnicalInfo)</p>
-            <div class="alert-warning">
-                @Html.Raw(Model.Parameters.GetDetails())
-            </div>
+
+        <p>@Html.DisplayFor(model => model.TechnicalInfo)</p>
+        <div class="alert-warning">
+            @*@Html.Encode(Model.Parameters.GetDetails())*@
+            @Html.DisplayNameFor(model => model.Parameters.errorurl_ts): @Html.Raw(Model.Parameters.errorurl_ts)<br />
+            @Html.DisplayNameFor(model => model.Parameters.errorurl_rp): @Html.Raw(Model.Parameters.errorurl_rp)<br />
+            @Html.DisplayNameFor(model => model.Parameters.errorurl_tid): @Html.Raw(Model.Parameters.errorurl_tid)<br />
+            @Html.DisplayNameFor(model => model.Parameters.errorurl_ctx): @Html.Raw(Model.Parameters.errorurl_ctx)
+            @*<dl class="row">
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Parameters.errorurl_ts):
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Parameters.errorurl_ts)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Parameters.errorurl_rp):
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Parameters.errorurl_rp)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Parameters.errorurl_tid):
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Parameters.errorurl_tid)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Parameters.errorurl_ctx):
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Parameters.errorurl_ctx)
+                </dd>
+            </dl>*@
+        </div>
         }
     }
-    @*<dl class="row">
+        @*<dl class="row">
 
            <dt class = "col-sm-2">
                     @Html.DisplayNameFor(model => model.Body)
@@ -52,7 +83,7 @@
                     @Html.DisplayFor(model => model.ShowRequestId)
                 </dd>
         </dl>*@
-</div>
+    </div>
 @*<div>
         @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
         <a asp-action="Index">Back to List</a>
