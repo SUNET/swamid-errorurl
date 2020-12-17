@@ -29,7 +29,7 @@ input[type="text"] {
 </style>
 </head>
 <body>
-<form name=errorurl method=POST action="links.php" onSubmit="document.errorurl.target = 'left';return true;">
+<form name=errorurl method=GET target="_top" action="./">
 <input type=text style="width=100%; font-size:small" name=errorurl value="<?= $errorurl ?>"><br>
 <input type=submit value="Set errorURL"> <a href="idp-list.php" target=_top>SWAMID IdP errorURL list</a>
 </form>

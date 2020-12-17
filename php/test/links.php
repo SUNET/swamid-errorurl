@@ -134,6 +134,11 @@ $errorurls = array(
 
 );
 
+$this_url_base = $_SERVER['REQUEST_SCHEME'] . "://" . $_SERVER['SERVER_NAME'] . ((($_SERVER['REQUEST_SCHEME'] == 'http' && $_SERVER['SERVER_PORT'] != '80') || ($_SERVER['REQUEST_SCHEME'] == 'https' && $_SERVER['SERVER_PORT'] != '443')) ? ":" . $_SERVER['SERVER_PORT'] : "");
+
+// errorurltest - open in new tab/window, but reuse same tab/window on all links
+$target = (strpos($errorurl, $this_url_base) === 0) ? "right" : "errorurltest";
+
 foreach ($errorurls as $code => $codedef) {
 	print "<p><b>$code</b><br>\n";
 	foreach ($codedef as $desc => $errorurl_link) {
@@ -143,8 +148,8 @@ foreach ($errorurls as $code => $codedef) {
 		$errorurl_link_en_wrapped = wrap_errorurl($errorurl_link_en);
 
 ?>
-<a target=right href="<?= $errorurl_link ?>" onclick="document.getElementById('resulting_errorurl').innerHTML='<?= $errorurl_link_wrapped ?>';"><?= $desc ?></a>
-(<a target=right href="<?= $errorurl_link_en ?>" onclick="document.getElementById('resulting_errorurl').innerHTML='<?= $errorurl_link_en_wrapped ?>';">eng</a>)<br>
+<a target="<?= $target ?>" href="<?= $errorurl_link ?>" onclick="document.getElementById('resulting_errorurl').innerHTML='<?= $errorurl_link_wrapped ?>';"><?= $desc ?></a>
+(<a target="<?= $target ?>" href="<?= $errorurl_link_en ?>" onclick="document.getElementById('resulting_errorurl').innerHTML='<?= $errorurl_link_en_wrapped ?>';">eng</a>)<br>
 <?php
 
 	}
