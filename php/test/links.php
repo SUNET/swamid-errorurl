@@ -149,7 +149,7 @@ foreach ($errorurls as $code => $codedef) {
 
 ?>
 <a target="<?= $target ?>" href="<?= $errorurl_link ?>" onclick="document.getElementById('resulting_errorurl').innerHTML='<?= $errorurl_link_wrapped ?>';"><?= $desc ?></a>
-(<a target="<?= $target ?>" href="<?= $errorurl_link_en ?>" onclick="document.getElementById('resulting_errorurl').innerHTML='<?= $errorurl_link_en_wrapped ?>';">eng</a>)<br>
+(<a target="<?= $target ?>" href="<?= $errorurl_link_en ?>" onclick="document.getElementById('resulting_errorurl').innerHTML='<?= $errorurl_link_en_wrapped ?>';">lang=en</a>)<br>
 <?php
 
 	}
