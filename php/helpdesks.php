@@ -36,13 +36,6 @@ $helpdesks = array(
 		),
 		'contactperson_email' => 'drift@mau.se',
 	),
-	'https://idp2-1.slu.se/idp/shibboleth' => array(
-		'displayname' => array(
-			'sv' => 'Sveriges Lantbruksuniversitet (under avveckling)',
-			'en' => 'Swedish University of Agricultural Science (deprecated)',
-		),
-		'contactperson_email' => 'saml-admins@slu.se',
-	),
 	'https://login.it.liu.se/idp/shibboleth' => array(
 		'displayname' => array(
 			'sv' => 'Linköpings Universitet - old',
@@ -202,13 +195,6 @@ $helpdesks = array(
 		),
 		'contactperson_email' => 'support@ehs.se',
 	),
-	'https://swamid.vr.se/idp/shibboleth' => array(
-		'displayname' => array(
-			'sv' => 'Vetenskapsrådet',
-			'en' => 'The Swedish Research Council',
-		),
-		'contactperson_email' => 'robert.chrudina@tieto.com',
-	),
 	'https://weblogin.kau.se/idp/shibboleth' => array(
 		'displayname' => array(
 			'sv' => 'Karlstads universitet',
@@ -361,6 +347,12 @@ $helpdesks = array(
 			'en' => 'Swedish University of Agricultural Science',
 		),
 		'contactperson_email' => 'IT-stod@slu.se',
+	),
+	'http://idp.vr.se/adfs/services/trust' => array(
+		'displayname' => array(
+			'sv' => 'Vetenskapsrådet',
+			'en' => 'The Swedish Research Council',
+		),
 	),
 	'https://shibboleth.uhr.se/idp/shibboleth' => array(
 		'displayname' => array(
