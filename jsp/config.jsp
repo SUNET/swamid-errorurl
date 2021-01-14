@@ -131,7 +131,7 @@ String ee_authorization_failure_ctx_non_confirmed_header_sv = "SWAMID basnivå k
 String ee_authorization_failure_ctx_non_confirmed_header_en = "SWAMID base level user account required";
 
 String ee_authorization_failure_ctx_non_confirmed_body_sv = "" +
-	"<p>Tjänsten du försökte nå kräver en användare som uppfyller SWAMID:s </i>basnivå</i>, även kallad SWAMID AL1.\n" +
+	"<p>Tjänsten du försökte nå kräver en användare som uppfyller SWAMID:s <i>basnivå</i>, även kallad SWAMID AL1.\n" +
 	"<p>Din användare uppfyller sannolikt detta men din organisations inloggningstjänst kanske inte är konfigurerad att skicka den informationen till tjänsten du försökte nå.\n" +
 	"<p>Kontakta din organisation och ange vilken tjänst du försökte nå, eventuella felmeddelande du fick samt, om möjligt, en skärmdump med felmeddelandena inklusive webbadressen högst upp i webbläsaren och motsvarande från denna sida.\n" +
 	"";

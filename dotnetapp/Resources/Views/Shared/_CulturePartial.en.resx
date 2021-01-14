@@ -117,8 +117,17 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="culture" xml:space="preserve">
+    <value>sv</value>
+  </data>
+  <data name="culture_text" xml:space="preserve">
+    <value>På Svenska</value>
+  </data>
   <data name="en" xml:space="preserve">
     <value>English</value>
+  </data>
+  <data name="logo" xml:space="preserve">
+    <value>images/swedish.png</value>
   </data>
   <data name="sv" xml:space="preserve">
     <value>Swedish</value>

@@ -17,6 +17,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Remove="Resources\Controllers\HomeController.resx" />
+    <EmbeddedResource Remove="Resources\Views\Shared\_CulturePartial.resx" />
+  </ItemGroup>
+
+  <ItemGroup>
     <EmbeddedResource Include="texts.en.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>

@@ -11,20 +11,28 @@ namespace Swamid.Errorurl.Domain
 {
     public class QueryParams
     {
-        public string errorurl_code { get; set; }
-
+        private string _errorurl_code;
         private string _errorurl_ts;
         private string _errorurl_rp;
         private string _errorurl_tid;
         private string _errorurl_ctx;
+        private string _lang;
+        public string errorurl_code
+        {
+            get
+            {
+                return _errorurl_code;
+            }
+            set { _errorurl_code = StringFunctions.StripString(value); }
+        }
         [DisplayName("ERRORURL_TS")]
         public string errorurl_ts
         {
             get
             {
-                return StringFunctions.StripString(_errorurl_ts);
+                return _errorurl_ts;
             }
-            set { _errorurl_ts = value; }
+            set { _errorurl_ts = StringFunctions.StripString(value); }
 
         }
         [DisplayName("ERRORURL_RP")]
@@ -32,29 +40,33 @@ namespace Swamid.Errorurl.Domain
         {
             get
             {
-                return StringFunctions.StripString(_errorurl_rp);
+                return _errorurl_rp;
             }
-            set { _errorurl_rp = value; }
+            set { _errorurl_rp = StringFunctions.StripString(value); }
         }
         [DisplayName("ERRORURL_TID")]
         public string errorurl_tid
         {
             get
             {
-                return StringFunctions.StripString(_errorurl_tid);
+                return _errorurl_tid;
             }
-            set { _errorurl_tid = value; }
+            set { _errorurl_tid = StringFunctions.StripString(value); }
         }
         [DisplayName("ERRORURL_CTX")]
         public string errorurl_ctx
         {
             get
             {
-                return StringFunctions.StripString(_errorurl_ctx);
+                return _errorurl_ctx;
             }
-            set { _errorurl_ctx = value; }
+            set { _errorurl_ctx =StringFunctions.StripString( value); }
         }
-
+        public string lang
+        {
+            get { return _lang; }
+            set { _lang = value; }
+        }
         public bool HaveDetails()
         {
             var ret = (errorurl_ts + "" != "" && (errorurl_ts + "").ToUpper() != "ERRORURL_TS") |
