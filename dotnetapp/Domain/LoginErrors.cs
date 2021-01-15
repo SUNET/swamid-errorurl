@@ -9,10 +9,28 @@ namespace Swamid.Errorurl.Domain
     
     public class LoginErrors
     {
+        [JsonPropertyName("common")]
+        public Common Common { get; set; }
         [JsonPropertyName("error")]
         public LoginError[] Errors { get; set; }
     }
-
+    public class Common
+    {
+        [JsonPropertyName("logp")]
+        public string Logo { get; set; }
+        [JsonPropertyName("lang")]
+        public string Lang { get; set; }
+        [JsonPropertyName("langFlag")]
+        public string LangFlag { get; set; }
+        [JsonPropertyName("langSelect")]
+        public string LangSelect { get; set; }
+        [JsonPropertyName("contactInformation")]
+        public string ContactInformation { get; set; }
+        [JsonPropertyName("contactInformation")]
+        public string TechnicalInformation { get; set; }
+        [JsonPropertyName("footer")]
+        public string Footer { get; set; }
+    }
     public class LoginError
     {
         [JsonPropertyName("type")]

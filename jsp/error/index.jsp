@@ -5,13 +5,13 @@
 <%@ page import="java.net.*" %>
 <%@ page import="java.time.*" %>
 <%@ page import="java.time.format.*" %>
-<%@ include file = "errorurl_errors.jsp" %>
+<%@ include file = "parse_config.jsp" %>
 <%!
 
-String print_header(LinkedHashMap<String, Text> basic_info, LinkedList<String> languages, LinkedHashMap <String, ErrorURL_Error> errorurl_errors, String lang, String errorurl_code, String errorurl_rp, String errorurl_ts, String errorurl_tid, String errorurl_ctx, String entityid)
+String print_header(LinkedHashMap<String, LinkedHashMap<String, String>> basic_info_lang, LinkedHashMap<String, String> basic_info, LinkedList<String> languages, LinkedHashMap <String, ErrorURL_Error> errorurl_errors, String lang, String errorurl_code, String errorurl_rp, String errorurl_ts, String errorurl_tid, String errorurl_ctx, String entityid)
 {
-	String title = get_errorcode_header(errorurl_errors, lang, errorurl_code, errorurl_ctx);
-	String logo = basic_info.get("logo").get(lang);
+	String title = get_errorcode_header(errorurl_errors, errorurl_code, errorurl_ctx);
+	String logo = basic_info.get("logo");
 	String output = "";
 
 	output += "" +
@@ -52,8 +52,8 @@ String print_header(LinkedHashMap<String, Text> basic_info, LinkedList<String> l
 			((!errorurl_tid.isEmpty()) ? "&errorurl_tid=" + URLEncoder.encode(errorurl_tid) : "") +
 			((!errorurl_ctx.isEmpty()) ? "&errorurl_ctx=" + URLEncoder.encode(errorurl_ctx) : "") +
 			"\">" +
-			"<img src=\"" + basic_info.get("lang_flag").get(l) + "\" alt=\"\"> " +
-			"<span>" + basic_info.get("lang_select").get(l) + "</span>" + 
+			"<img src=\"" + basic_info_lang.get(l).get("langFlag") + "\" alt=\"\"> " +
+			"<span>" + basic_info_lang.get(l).get("langSelect") + "</span>" + 
 			"</a>\n";
 	}
 
@@ -62,7 +62,7 @@ String print_header(LinkedHashMap<String, Text> basic_info, LinkedList<String> l
 	return output;
 }
 
-String get_errorcode_header(LinkedHashMap <String, ErrorURL_Error> errorurl_errors, String lang, String errorurl_code, String errorurl_ctx)
+String get_errorcode_header(LinkedHashMap <String, ErrorURL_Error> errorurl_errors, String errorurl_code, String errorurl_ctx)
 {
 	ErrorURL_Error errorurl_error = errorurl_errors.get(errorurl_code);
 
@@ -74,7 +74,7 @@ String get_errorcode_header(LinkedHashMap <String, ErrorURL_Error> errorurl_erro
 			ErrorURL_Error_ctx errorurl_error_ctx = entry.getValue();
 			for (String identifier : errorurl_error_ctx.get_identifiers()) {
 				if (errorurl_ctx.indexOf(identifier) != -1) {
-					text = errorurl_error_ctx.get_header(lang);
+					text = errorurl_error_ctx.get_header();
 					ctx_found = true;
 					break;
 				}
@@ -85,17 +85,17 @@ String get_errorcode_header(LinkedHashMap <String, ErrorURL_Error> errorurl_erro
 		}
 	}
 	if (text.isEmpty()) {
-		text = errorurl_error.get_header(lang);
+		text = errorurl_error.get_header();
 	}
 
 	return text;
 }
 
-String get_errorcode_body(LinkedHashMap <String, ErrorURL_Error> errorurl_errors, String lang, String errorurl_code, String errorurl_ctx)
+LinkedList<String> get_errorcode_body(LinkedHashMap <String, ErrorURL_Error> errorurl_errors, String errorurl_code, String errorurl_ctx)
 {
 	ErrorURL_Error errorurl_error = errorurl_errors.get(errorurl_code);
 
-	String text = "";
+	LinkedList<String> text = null;
 	Boolean ctx_found = false;
 	if (!errorurl_ctx.isEmpty() && errorurl_error.get_ctx().size() != 0) {
 		for (Map.Entry<String, ErrorURL_Error_ctx> entry : errorurl_error.get_ctx().entrySet()) {
@@ -103,7 +103,7 @@ String get_errorcode_body(LinkedHashMap <String, ErrorURL_Error> errorurl_errors
 			ErrorURL_Error_ctx errorurl_error_ctx = entry.getValue();
 			for (String identifier : errorurl_error_ctx.get_identifiers()) {
 				if (errorurl_ctx.indexOf(identifier) != -1) {
-					text = errorurl_error_ctx.get_body(lang);
+					text = errorurl_error_ctx.get_body();
 					ctx_found = true;
 					break;
 				}
@@ -113,22 +113,22 @@ String get_errorcode_body(LinkedHashMap <String, ErrorURL_Error> errorurl_errors
 			}
 		}
 	}
-	if (text.isEmpty()) {
-		text = errorurl_error.get_body(lang);
+	if (text == null) {
+		text = errorurl_error.get_body();
 	}
 
 	return text;
 }
 
-String print_error(LinkedHashMap<String, Text> basic_info, LinkedHashMap <String, ErrorURL_Error> errorurl_errors, String lang, Boolean print_sub_header, String entityid, String errorurl_code, String errorurl_ts, String errorurl_rp, String errorurl_tid, String errorurl_ctx)
+String print_error(LinkedHashMap<String, String> basic_info, LinkedHashMap <String, ErrorURL_Error> errorurl_errors, Boolean print_sub_header, String entityid, String errorurl_code, String errorurl_ts, String errorurl_rp, String errorurl_tid, String errorurl_ctx)
 {
 	ErrorURL_Error errorurl_error = errorurl_errors.get(errorurl_code);
 
-	String header = get_errorcode_header(errorurl_errors, lang, errorurl_code, errorurl_ctx);
-	String body = get_errorcode_body(errorurl_errors, lang, errorurl_code, errorurl_ctx);
+	String header = get_errorcode_header(errorurl_errors, errorurl_code, errorurl_ctx);
+	LinkedList<String> body_paragraphs = get_errorcode_body(errorurl_errors, errorurl_code, errorurl_ctx);
 
-	String contact_information = basic_info.get("contact_information").get(lang);
-	String technical_information = basic_info.get("technical_information").get(lang);
+	String contactInformation = basic_info.get("contactInformation");
+	String technicalInformation = basic_info.get("technicalInformation");
 
 	String output = "";
 
@@ -138,9 +138,11 @@ String print_error(LinkedHashMap<String, Text> basic_info, LinkedHashMap <String
 
 	}
 	
-	output += body;
+	for (String body_paragraph : body_paragraphs) {
+		output += "<p>" + body_paragraph + "\n";
+	}
 
-	output += "<p>" + contact_information + "\n";
+	output += "<p>" + contactInformation + "\n";
 
 	String readable_date = "";
 	if (errorurl_ts.matches("\\d+")) {
@@ -149,10 +151,9 @@ String print_error(LinkedHashMap<String, Text> basic_info, LinkedHashMap <String
 		readable_date = " (" + DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss'Z'").format(localdatetime) + ")";
 	}
 
-
 	if (!errorurl_ctx.isEmpty() && !errorurl_ctx.equals("ERRORURL_CTX")) {
 
-		output += "<p>" + technical_information + ":<br>\n" +
+		output += "<p>" + technicalInformation + ":<br>\n" +
 			"<p class=\"ml-4\">\n" +
 			"<code>\n" +
 			"ERRORURL_TS:  " + safeHtml(errorurl_ts) + readable_date + "<br>\n" +
@@ -180,29 +181,35 @@ String safeHtml(String param)
 %>
 <%
 
-String lang		= request.getParameter("lang");
-String entityid 	= request.getParameter("entityid");
-String errorurl_code	= request.getParameter("errorurl_code");
-String errorurl_ts	= request.getParameter("errorurl_ts");
-String errorurl_rp	= request.getParameter("errorurl_rp");
-String errorurl_tid	= request.getParameter("errorurl_tid");
-String errorurl_ctx	= request.getParameter("errorurl_ctx");
+String lang		= (request.getParameter("lang")          != null) ? request.getParameter("lang") : "";
+String entityid 	= (request.getParameter("entityid")      != null) ? request.getParameter("entityid") : "";
+String errorurl_code	= (request.getParameter("errorurl_code") != null) ? request.getParameter("errorurl_code") : "";
+String errorurl_ts	= (request.getParameter("errorurl_ts")   != null) ? request.getParameter("errorurl_ts") : "";
+String errorurl_rp	= (request.getParameter("errorurl_rp")   != null) ? request.getParameter("errorurl_rp") : "";
+String errorurl_tid	= (request.getParameter("errorurl_tid")  != null) ? request.getParameter("errorurl_tid") : "";
+String errorurl_ctx	= (request.getParameter("errorurl_ctx")  != null) ? request.getParameter("errorurl_ctx") : "";
 
 if (!languages.contains(lang)) {
 	lang = default_lang;
 }
+
+LinkedHashMap<String, String> basic_info = basic_info_lang.get(lang);
+LinkedHashMap<String, ErrorURL_Error> errorurl_errors = errorurl_errors_lang.get(lang);
 
 if (!Arrays.asList("IDENTIFICATION_FAILURE", "AUTHENTICATION_FAILURE", "AUTHORIZATION_FAILURE", "OTHER_ERROR").contains(errorurl_code)) {
 	errorurl_code = "ERRORURL_CODE";
 }
 
 if (Arrays.asList("IDENTIFICATION_FAILURE", "AUTHENTICATION_FAILURE", "AUTHORIZATION_FAILURE", "OTHER_ERROR").contains(errorurl_code)) {
-	out.print(print_header(basic_info, languages, errorurl_errors, lang, errorurl_code, errorurl_rp, errorurl_ts, errorurl_tid, errorurl_ctx, entityid));
-	out.print(print_error(basic_info, errorurl_errors, lang, false, entityid, errorurl_code, errorurl_ts, errorurl_rp, errorurl_tid, errorurl_ctx));
+	out.print(print_header(basic_info_lang, basic_info, languages, errorurl_errors, lang, errorurl_code, errorurl_rp, errorurl_ts, errorurl_tid, errorurl_ctx, entityid));
+	out.print(print_error(basic_info, errorurl_errors, false, entityid, errorurl_code, errorurl_ts, errorurl_rp, errorurl_tid, errorurl_ctx));
 } else {
-	out.print(print_header(basic_info, languages, errorurl_errors, lang, errorurl_code, errorurl_rp, errorurl_ts, errorurl_tid, errorurl_ctx, entityid));
+	out.print(print_header(basic_info_lang, basic_info, languages, errorurl_errors, lang, errorurl_code, errorurl_rp, errorurl_ts, errorurl_tid, errorurl_ctx, entityid));
 
-	out.print(errorurl_errors.get(errorurl_code).get_body(lang));
+	LinkedList<String> body_paragraphs = get_errorcode_body(errorurl_errors, errorurl_code, errorurl_ctx);
+	for (String body_paragraph : body_paragraphs) {
+		out.print("<p>" + body_paragraph + "\n");
+	}
 
 	for (Map.Entry<String, ErrorURL_Error> entry : errorurl_errors.entrySet()) {
 		String id = entry.getKey();
@@ -210,12 +217,14 @@ if (Arrays.asList("IDENTIFICATION_FAILURE", "AUTHENTICATION_FAILURE", "AUTHORIZA
 		if (errorurl_error.get_id().equals("ERRORURL_CODE")) {
 			continue;
 		}
-		out.print(print_error(basic_info, errorurl_errors, lang, true, entityid, errorurl_error.get_id(), errorurl_ts, errorurl_rp, errorurl_tid, errorurl_ctx));
+		out.print(print_error(basic_info, errorurl_errors, true, entityid, errorurl_error.get_id(), errorurl_ts, errorurl_rp, errorurl_tid, errorurl_ctx));
 	}
 
 }
 
-out.println(basic_info.get("footer").get(lang));
+out.println("<hr>");
+
+out.println(basic_info.get("footer"));
 
 %>
 </div>

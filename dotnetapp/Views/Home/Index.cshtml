@@ -4,8 +4,8 @@
 @using Microsoft.AspNetCore.Mvc.Localization
 @using Microsoft.Extensions.Options
 
-@inject IViewLocalizer Localizer
-@inject IOptions<RequestLocalizationOptions> LocOptions
+@*@inject IViewLocalizer Localizer
+@inject IOptions<RequestLocalizationOptions> LocOptions*@
 
 @*@{
     var requestCulture = Context.Features.Get<IRequestCultureFeature>();
@@ -22,15 +22,17 @@
 
     <div>
         <div class="float-right">
-            <a href="@Url.Action("Index","Home", 
-               new {errorurl_code=Model.Parameters.errorurl_code,errorurl_ts=Model.Parameters.errorurl_ts,errorurl_rp=Model.Parameters.errorurl_rp,
-               errorurl_tid=Model.Parameters.errorurl_tid,errorurl_ctx=Model.Parameters.errorurl_ctx,lang=Model.Culture})">
-                <img src="@Model.CultureLogo" />@Model.CultureText
-            </a>
-            @*<a href="@Url.Action("SetCulture","Culture",new {culture = Localizer["culture"].Value, returnUrl = returnUrl  })">
-                <img src="@Localizer["logo"].Value" />@Localizer["culture_text"].Value
-            </a>*@
-        </div>
+            @foreach (var n in Model.Navigations)
+            {
+                //var o = 
+                <a href="@Url.Action("Index","Home",new {errorurl_code=@Model.Parameters.errorurl_code,errorurl_ts=Model.Parameters.errorurl_ts,errorurl_rp=Model.Parameters.errorurl_rp,
+                    errorurl_tid=Model.Parameters.errorurl_tid,errorurl_ctx=Model.Parameters.errorurl_ctx,lang=n.Culture})">
+                    <img src="/images/@n.CultureLogo" />@n.CultureText</a>
+            }
+
+                
+
+            </div>
             @foreach (var err in Model.LoginError)
             {
                 <h2>@err.Header</h2>
@@ -48,65 +50,9 @@
                         @Html.DisplayNameFor(model => model.Parameters.errorurl_ts): @Html.Raw(Model.Parameters.errorurl_ts)<br />
                         @Html.DisplayNameFor(model => model.Parameters.errorurl_rp): @Html.Raw(Model.Parameters.errorurl_rp)<br />
                         @Html.DisplayNameFor(model => model.Parameters.errorurl_tid): @Html.Raw(Model.Parameters.errorurl_tid)<br />
-                        @Html.DisplayNameFor(model => model.Parameters.errorurl_ctx): @Html.Raw(Model.Parameters.errorurl_ctx)
-                        @*<dl class="row">
-                            <dt class="col-sm-2">
-                                @Html.DisplayNameFor(model => model.Parameters.errorurl_ts):
-                            </dt>
-                            <dd class="col-sm-10">
-                                @Html.DisplayFor(model => model.Parameters.errorurl_ts)
-                            </dd>
-                            <dt class="col-sm-2">
-                                @Html.DisplayNameFor(model => model.Parameters.errorurl_rp):
-                            </dt>
-                            <dd class="col-sm-10">
-                                @Html.DisplayFor(model => model.Parameters.errorurl_rp)
-                            </dd>
-                            <dt class="col-sm-2">
-                                @Html.DisplayNameFor(model => model.Parameters.errorurl_tid):
-                            </dt>
-                            <dd class="col-sm-10">
-                                @Html.DisplayFor(model => model.Parameters.errorurl_tid)
-                            </dd>
-                            <dt class="col-sm-2">
-                                @Html.DisplayNameFor(model => model.Parameters.errorurl_ctx):
-                            </dt>
-                            <dd class="col-sm-10">
-                                @Html.DisplayFor(model => model.Parameters.errorurl_ctx)
-                            </dd>
-                        </dl>*@
+                        @Html.DisplayNameFor(model => model.Parameters.errorurl_ctx): @Html.Raw(Model.Parameters.errorurl_ctx)                        
                     </div>
                 }
             }
-            @*<dl class="row">
-
-               <dt class = "col-sm-2">
-                        @Html.DisplayNameFor(model => model.Body)
-                    </dt>
-                    <dd class = "col-sm-10">
-                        @Html.DisplayFor(model => model.Body)
-                    </dd>
-                    <dt class = "col-sm-2">
-                        @Html.DisplayNameFor(model => model.Footer)
-                    </dt>
-                    <dd class = "col-sm-10">
-                        @Html.DisplayFor(model => model.Footer)
-                    </dd>
-                    <dt class = "col-sm-2">
-                        @Html.DisplayNameFor(model => model.RequestId)
-                    </dt>
-                    <dd class = "col-sm-10">
-                        @Html.DisplayFor(model => model.RequestId)
-                    </dd>
-                    <dt class = "col-sm-2">
-                        @Html.DisplayNameFor(model => model.ShowRequestId)
-                    </dt>
-                    <dd class = "col-sm-10">
-                        @Html.DisplayFor(model => model.ShowRequestId)
-                    </dd>
-            </dl>*@
         </div>
-        @*<div>
-            @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-            <a asp-action="Index">Back to List</a>
-        </div>*@
+        

@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Newtonsoft.Json;
+using Swamid.Errorurl.Domain;
 using System.IO;
 using System.Linq;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
+using System.Text;
 
 namespace Swamid.Errorurl.Helpers
 {
@@ -17,6 +16,13 @@ namespace Swamid.Errorurl.Helpers
             //var appRoot = appPathMatcher.Match(exePath).Value;
 
             return Path.Combine(exePath, fileName);
+        }
+        public static LoginErrors GetErrorTexts(string fileName)
+        {
+            var path = ToApplicationPath(fileName);
+            var json = System.IO.File.ReadAllText(path, Encoding.UTF8);
+            var errors = JsonConvert.DeserializeObject<LoginErrors>(json);
+            return errors;
         }
     }
 }

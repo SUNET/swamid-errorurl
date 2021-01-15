@@ -13,9 +13,8 @@ namespace Swamid.Errorurl.Models
         public QueryParams Parameters { get; set; }
         public string RequestId { get; set; }
         public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
-        public string Culture { get; set; }
-        public string CultureText { get; set; }
-        public string CultureLogo { get; set; }
-        public string ReturnUrl { get; set; }
+        public List<Navigation> Navigations { get; set; }
+        //public string ReturnUrl { get; set; }
+        public string Footer  { get; set; }
     }
 }

@@ -1,20 +1,11 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.UI;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System.Globalization;
-using Microsoft.Extensions.Options;
-using Microsoft.Extensions.Localization;
-using Microsoft.AspNetCore.Mvc.Razor;
+using Swamid.Errorurl.Domain;
+using Swamid.Errorurl.Helpers;
 
 namespace Swamid.Errorurl
 {
@@ -30,24 +21,17 @@ namespace Swamid.Errorurl
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddLocalization(options => options.ResourcesPath = "Resources");
-            services.AddMvc()
-                .AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix,
-                    opts => { opts.ResourcesPath = "Resources"; })
-                .AddDataAnnotationsLocalization();
 
+            services.AddMvc();
+               
+            var languageSettings = new LanguageSettings();
+            Configuration.GetSection("LanguageSettings").Bind(languageSettings);
 
-            services.Configure<RequestLocalizationOptions>(options =>
+            foreach(var f in languageSettings.CultureFiles)
             {
-                var cultures = new List<CultureInfo> 
-                {
-                    new CultureInfo("sv"),
-                    new CultureInfo("en")
-                };
-                options.DefaultRequestCulture = new Microsoft.AspNetCore.Localization.RequestCulture("sv");
-                options.SupportedCultures = cultures;
-                options.SupportedUICultures = cultures;
-            });
+                languageSettings.LoginErrors.Add(FilePathHelper.GetErrorTexts(f));
+            }
+            services.AddSingleton<LanguageSettings>(languageSettings);
 
             services.AddControllersWithViews();
             services.AddRazorPages();
@@ -63,17 +47,12 @@ namespace Swamid.Errorurl
             }
             else
             {
-                //Set this if subsite 
-                //app.UsePathBase("/ErrorUrl");
                 app.UseExceptionHandler("/Home/Error");
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
-            var options = app.ApplicationServices.GetService<IOptions<RequestLocalizationOptions>>();
-            app.UseRequestLocalization(options.Value);
 
             app.UseRouting();
 
