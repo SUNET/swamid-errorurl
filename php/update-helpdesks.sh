@@ -21,7 +21,7 @@ EOF
 /EntitiesDescriptor/EntityDescriptor/@entityID|\
 /EntitiesDescriptor/EntityDescriptor/IDPSSODescriptor/@errorURL|\
 /EntitiesDescriptor/EntityDescriptor/IDPSSODescriptor/Extensions/UIInfo/DisplayName|\
-/EntitiesDescriptor/EntityDescriptor/ContactPerson[@contactType='technical']/EmailAddress" - 2>/dev/null \
+/EntitiesDescriptor/EntityDescriptor/ContactPerson[@contactType='support']/EmailAddress" - 2>/dev/null \
 		| sed -e 's; entityID=;\n&;g' -e 's;<DisplayName;\n&;g' -e 's;<EmailAddress;\n&;g' \
 		| grep .
 		echo ' entitytID=""'
