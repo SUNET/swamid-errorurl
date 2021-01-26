@@ -317,7 +317,7 @@ $helpdesks = array(
 			'sv' => 'Högskolan Väst',
 			'en' => 'University West',
 		),
-		'contactperson_email' => 'servicedesk@hv.se',
+		'contactperson_email' => 'servicecenter@hv.se',
 	),
 	'https://weblogin.smhi.se/idp/shibboleth' => array(
 		'displayname' => array(
@@ -380,7 +380,7 @@ $helpdesks = array(
 			'sv' => 'Högskolan Väst ny',
 			'en' => 'University West new',
 		),
-		'contactperson_email' => 'servicedesk@hv.se',
+		'contactperson_email' => 'servicecenter@hv.se',
 	),
 	'http://adfs.sp.se/adfs/services/trust' => array(
 		'displayname' => array(
