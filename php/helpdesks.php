@@ -332,7 +332,6 @@ $helpdesks = array(
 			'en' => 'Örebro University',
 		),
 		'contactperson_email' => 'itsupport@oru.se',
-		'errorurl' => 'https://idp.oru.se/identity/feedback.htm',
 	),
 	'http://federation.uniarts.se/adfs/services/trust' => array(
 		'displayname' => array(
