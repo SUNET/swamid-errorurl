@@ -35,13 +35,6 @@ $helpdesks = array(
 		),
 		'contactperson_email' => 'support@mau.se',
 	),
-	'https://login.it.liu.se/idp/shibboleth' => array(
-		'displayname' => array(
-			'sv' => 'Linköpings Universitet - old',
-			'en' => 'Linköping University - old',
-		),
-		'contactperson_email' => 'helpdesk@liu.se',
-	),
 	'https://idp.hkr.se/idp/shibboleth' => array(
 		'displayname' => array(
 			'sv' => 'Högskolan Kristianstad',
@@ -144,6 +137,7 @@ $helpdesks = array(
 			'sv' => 'SICS',
 			'en' => 'SICS',
 		),
+		'contactperson_email' => 'support.it@ri.se',
 	),
 	'https://idp2.kkh.se/idp/shibboleth' => array(
 		'displayname' => array(
