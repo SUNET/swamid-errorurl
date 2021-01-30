@@ -1,6 +1,5 @@
 <%@ page trimDirectiveWhitespaces="true" %>
-<%@ page import="java.nio.charset.StandardCharsets" %>
-<%@ page import="java.nio.file.*" %>
+<%@ page import="java.io.*" %>
 <%@ page import="org.json.*" %>
 <%@ include file = "config.jsp" %>
 <%!
@@ -110,7 +109,18 @@ LinkedHashMap<String, LinkedHashMap<String, String>> basic_info_lang = new Linke
 LinkedHashMap<String, LinkedHashMap<String, ErrorURL_Error>> errorurl_errors_lang = new LinkedHashMap();
 
 for (String language_file : language_files) {
-	String json = new String(Files.readAllBytes(Paths.get(getServletContext().getResource("WEB-INF/resources/" + language_file).getFile())), StandardCharsets.UTF_8);
+	// Read language_file from classpath into String json
+	ClassLoader classLoader = getClass().getClassLoader();
+	InputStream inputStream = classLoader.getResourceAsStream(language_file);
+	InputStreamReader isReader = new InputStreamReader(inputStream);
+	BufferedReader reader = new BufferedReader(isReader);
+	StringBuffer sb = new StringBuffer();
+	String str;
+	while((str = reader.readLine()) != null) {
+		 sb.append(str);
+	}
+	String json = sb.toString();
+
 	JSONObject jobject = new JSONObject(json);
 
 	LinkedHashMap<String, String> basic_info = new LinkedHashMap();

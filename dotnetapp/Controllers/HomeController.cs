@@ -95,7 +95,7 @@ namespace Swamid.Errorurl.Controllers
 
         private string GetLogoPath(string path)
         {
-            var imgPath = path;
+            var imgPath = "/images/" + path;
             if (!string.IsNullOrEmpty(_languageSettings.SubsiteName))
             {
                 imgPath = "/" + _languageSettings.SubsiteName + imgPath;
