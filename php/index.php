@@ -160,10 +160,10 @@ function print_error($print_sub_header, $entityid, $errorurl_code, $errorurl_ts,
 		$contactperson_email = $helpdesks[$entityid]['contactperson_email'];
 		$contactInformation_replaced = preg_replace(array(
 				'/DISPLAYNAME/',
-				'/EMAIL/'
+				'/EMAIL/',
 			), array(
 				'<b>' . $displayname . '</b>',
-				'<a href="mailto:' . $contactperson_email . '">' . $contactperson_email . '</a>',
+				$contactperson_email,
 			), $contactInformation);
 
 ?>
