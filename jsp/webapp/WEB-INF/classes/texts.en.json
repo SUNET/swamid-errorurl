@@ -4,7 +4,7 @@
     "langFlag": "english.png",
     "langSelect": "In English",
     "logo": "logo.png",
-    "contactInformation": "The support of your organisation, DISPLAYNAME, can be reached at EMAIL.",
+    "contactInformation": "The support of your organisation, DISPLAYNAME, can be reached at <a href=\"mailto:EMAIL\">EMAIL</a>.",
     "technicalInformation": "Technical information",
     "footer": ""
   },

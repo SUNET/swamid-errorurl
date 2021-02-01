@@ -4,7 +4,7 @@
     "langFlag": "english.png",
     "langSelect": "In English",
     "logo": "logo.png",
-    "contactInformation": "The support of your organisation, DISPLAYNAME, can be reached at EMAIL.",
+    "contactInformation": "The support of your organisation, DISPLAYNAME, can be reached at <a href=\"mailto:EMAIL\">EMAIL</a>.",
     "technicalInformation": "Technical information",
     "footer": "<i>This is a generic error page for federated login (errorURL) within <a href=\"https://www.swamid.se/\">SWAMID</a>. Every organisation in SWAMID may design and publish their own error page. Feel free to use this page as inspiration. Please contact operations@swamid.se for more information regarding errorURL in SWAMID.</i>"
   },

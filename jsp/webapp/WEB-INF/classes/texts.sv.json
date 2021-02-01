@@ -4,7 +4,7 @@
     "langFlag": "swedish.png",
     "langSelect": "På svenska",
     "logo": "logo.png",
-    "contactInformation": "Supporten för din organisation, DISPLAYNAME, kan nås via EMAIL.",
+    "contactInformation": "Supporten för din organisation, DISPLAYNAME, kan nås via <a href=\"mailto:EMAIL\">EMAIL</a>.",
     "technicalInformation": "Teknisk information",
     "footer": ""
   },
