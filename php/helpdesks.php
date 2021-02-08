@@ -194,7 +194,7 @@ $helpdesks = array(
 			'en' => 'Karlstad University',
 		),
 		'contactperson_email' => '2525@kau.se',
-		'errorurl' => 'https://weblogin.kau.se/error/?errorurl_code=ERRORURL_CODE&amp;errorurl_ts=ERRORURL_TS&amp;errorurl_rp=ERRORURL_RP&amp;errorurl_tid=ERRORURL_TID&amp;errorurl_ctx=ERRORURL_CTX',
+		'errorurl' => 'https://weblogin.kau.se/error/?errorurl_code=ERRORURL_CODE&errorurl_ts=ERRORURL_TS&errorurl_rp=ERRORURL_RP&errorurl_tid=ERRORURL_TID&errorurl_ctx=ERRORURL_CTX',
 	),
 	'http://login1.fhs.se/adfs/services/trust' => array(
 		'displayname' => array(
@@ -244,7 +244,7 @@ $helpdesks = array(
 			'en' => 'The Swedish School of Sport and Health Sciences',
 		),
 		'contactperson_email' => 'itsupport@gih.se',
-		'errorurl' => 'https://idp01.gih.se/error/?errorurl_code=ERRORURL_CODE&amp;errorurl_ts=ERRORURL_TS&amp;errorurl_rp=ERRORURL_RP&amp;errorurl_tid=ERRORURL_TID&amp;errorurl_ctx=ERRORURL_CTX',
+		'errorurl' => 'https://idp01.gih.se/error/?errorurl_code=ERRORURL_CODE&errorurl_ts=ERRORURL_TS&errorurl_rp=ERRORURL_RP&errorurl_tid=ERRORURL_TID&errorurl_ctx=ERRORURL_CTX',
 	),
 	'https://idp2.his.se/idp/shibboleth' => array(
 		'displayname' => array(

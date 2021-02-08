@@ -64,7 +64,7 @@ EOF
 			contactperson_email=$(echo "$line" | sed -n 's;^<EmailAddress>mailto:\([^<]*\)</EmailAddress>;\1;p')
 		fi
 		if echo "$line" | grep -q 'errorURL=' ; then
-			errorurl=$(echo "$line" | sed -n 's;.*errorURL="\([^"]*\)".*;\1;p')
+			errorurl=$(echo "$line" | sed -n 's;.*errorURL="\([^"]*\)".*;\1;p' | sed 's/&amp;/\&/g')
 		fi
 	done
 
