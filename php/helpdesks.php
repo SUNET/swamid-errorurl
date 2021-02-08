@@ -20,6 +20,7 @@ $helpdesks = array(
 			'sv' => 'Linnéuniversitetet',
 			'en' => 'Linnaeus University',
 		),
+		'contactperson_email' => 'it-support@lnu.se',
 	),
 	'https://login.du.se/idp/shibboleth' => array(
 		'displayname' => array(
@@ -58,8 +59,8 @@ $helpdesks = array(
 	),
 	'https://idp.kb.se/idp/shibboleth' => array(
 		'displayname' => array(
-			'sv' => 'Kungliga biblioteket',
-			'en' => 'National Library of Sweden',
+			'sv' => 'Kungliga biblioteket TEST',
+			'en' => 'National Library of Sweden TEST',
 		),
 		'contactperson_email' => 'swamid@kb.se',
 	),
@@ -193,6 +194,7 @@ $helpdesks = array(
 			'en' => 'Karlstad University',
 		),
 		'contactperson_email' => '2525@kau.se',
+		'errorurl' => 'https://weblogin.kau.se/error/?errorurl_code=ERRORURL_CODE&amp;errorurl_ts=ERRORURL_TS&amp;errorurl_rp=ERRORURL_RP&amp;errorurl_tid=ERRORURL_TID&amp;errorurl_ctx=ERRORURL_CTX',
 	),
 	'http://login1.fhs.se/adfs/services/trust' => array(
 		'displayname' => array(
@@ -210,7 +212,7 @@ $helpdesks = array(
 	),
 	'https://idp.hj.se/idp/shibboleth' => array(
 		'displayname' => array(
-			'sv' => 'Högskolan i Jönköping',
+			'sv' => 'Jönköping University',
 			'en' => 'Jönköping University',
 		),
 		'contactperson_email' => 'swamid@ju.se',
@@ -242,6 +244,7 @@ $helpdesks = array(
 			'en' => 'The Swedish School of Sport and Health Sciences',
 		),
 		'contactperson_email' => 'itsupport@gih.se',
+		'errorurl' => 'https://idp01.gih.se/error/?errorurl_code=ERRORURL_CODE&amp;errorurl_ts=ERRORURL_TS&amp;errorurl_rp=ERRORURL_RP&amp;errorurl_tid=ERRORURL_TID&amp;errorurl_ctx=ERRORURL_CTX',
 	),
 	'https://idp2.his.se/idp/shibboleth' => array(
 		'displayname' => array(
@@ -360,6 +363,7 @@ $helpdesks = array(
 			'sv' => 'Linnéuniversitetet QA',
 			'en' => 'Linnaeus University QA',
 		),
+		'contactperson_email' => 'it-support@lnu.se',
 	),
 	'https://idp.antagning.se/aws-idp' => array(
 		'displayname' => array(
@@ -398,8 +402,8 @@ $helpdesks = array(
 	),
 	'http://adfs.kb.se/adfs/services/trust' => array(
 		'displayname' => array(
-			'sv' => 'Kungliga biblioteket TEST',
-			'en' => 'National Library of Sweden TEST',
+			'sv' => 'Kungliga biblioteket',
+			'en' => 'National Library of Sweden',
 		),
 		'contactperson_email' => 'ITsupport@kb.se',
 	),
