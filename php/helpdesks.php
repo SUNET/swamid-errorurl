@@ -187,6 +187,7 @@ $helpdesks = array(
 			'sv' => 'Enskilda Högskolan Stockholm',
 			'en' => 'University College Stockholm',
 		),
+		'errorurl' => 'https://idp.ths.se/idp/error/ERRORURL_CODE.html',
 	),
 	'https://weblogin.kau.se/idp/shibboleth' => array(
 		'displayname' => array(
@@ -356,7 +357,7 @@ $helpdesks = array(
 			'sv' => 'Universitets- och högskolerådet',
 			'en' => 'The Swedish Council for Higher Education',
 		),
-		'contactperson_email' => 'lennart.hellsten@uhr.se',
+		'contactperson_email' => 'johan.andersson@uhr.se',
 	),
 	'https://idp.qa.lnu.se/idp/shibboleth' => array(
 		'displayname' => array(
