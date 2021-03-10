@@ -35,6 +35,7 @@ $helpdesks = array(
 			'en' => 'Malmö University',
 		),
 		'contactperson_email' => 'support@mau.se',
+		'errorurl' => 'https://idp.mah.se/error/?errorurl_code=ERRORURL_CODE&errorurl_ts=ERRORURL_TS&errorurl_rp=ERRORURL_RP&errorurl_tid=ERRORURL_TID&errorurl_ctx=ERRORURL_CTX',
 	),
 	'https://idp.hkr.se/idp/shibboleth' => array(
 		'displayname' => array(
@@ -77,6 +78,7 @@ $helpdesks = array(
 			'en' => 'Mälardalen University',
 		),
 		'contactperson_email' => 'helpdesk@mdh.se',
+		'errorurl' => 'https://idp.mdh.se/error/?errorurl_code=ERRORURL_CODE&errorurl_ts=ERRORURL_TS&errorurl_rp=ERRORURL_RP&errorurl_tid=ERRORURL_TID&errorurl_ctx=ERRORURL_CTX',
 	),
 	'https://idp.kmh.se/idp/shibboleth' => array(
 		'displayname' => array(
@@ -118,6 +120,7 @@ $helpdesks = array(
 			'en' => 'Uppsala University',
 		),
 		'contactperson_email' => 'servicedesk@uu.se',
+		'errorurl' => 'https://error.swamid.se/?errorurl_code=ERRORURL_CODE&errorurl_ts=ERRORURL_TS&errorurl_rp=ERRORURL_RP&errorurl_tid=ERRORURL_TID&errorurl_ctx=ERRORURL_CTX&entityid=https://weblogin.uu.se/idp/shibboleth',
 	),
 	'https://login.idp.hhs.se/idp/shibboleth' => array(
 		'displayname' => array(
