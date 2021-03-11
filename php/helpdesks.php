@@ -220,6 +220,7 @@ $helpdesks = array(
 			'en' => 'Jönköping University',
 		),
 		'contactperson_email' => 'swamid@ju.se',
+		'errorurl' => 'https://idp.hj.se/error/?errorurl_code=ERRORURL_CODE&errorurl_ts=ERRORURL_TS&errorurl_rp=ERRORURL_RP&errorurl_tid=ERRORURL_TID&errorurl_ctx=ERRORURL_CTX',
 	),
 	'https://idp.sunet.se/idp' => array(
 		'displayname' => array(
