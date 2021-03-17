@@ -330,7 +330,7 @@ $helpdesks = array(
 			'en' => 'Umeå University',
 		),
 		'contactperson_email' => 'datordrift@its.umu.se',
-		'errorurl' => 'https://error.swamid.se/?errorurl_code=ERRORURL_CODE&errorurl_ts=ERRORURL_TS&errorurl_rp=ERRORURL_RP&errorurl_tid=ERRORURL_TID&errorurl_ctx=ERRORURL_CTX&entityid=http://adfs.umu.se/adfs/services/trust',
+		'errorurl' => 'https://administrationsverktyg.umu.se/ErrorUrl/?errorurl_code=ERRORURL_CODE&errorurl_ts=ERRORURL_TS&errorurl_rp=ERRORURL_RP&errorurl_tid=ERRORURL_TID&errorurl_ctx=ERRORURL_CTX',
 	),
 	'http://adfs.nrm.se/adfs/services/trust' => array(
 		'displayname' => array(
@@ -419,14 +419,6 @@ $helpdesks = array(
 		),
 		'contactperson_email' => 'appldrift_saml@uhr.se',
 		'errorurl' => 'https://error.swamid.se/?errorurl_code=ERRORURL_CODE&errorurl_ts=ERRORURL_TS&errorurl_rp=ERRORURL_RP&errorurl_tid=ERRORURL_TID&errorurl_ctx=ERRORURL_CTX&entityid=https://idp.antagning.se/aws-idp',
-	),
-	'http://adfs.hv.se/adfs/services/trust' => array(
-		'displayname' => array(
-			'sv' => 'Högskolan Väst ny',
-			'en' => 'University West new',
-		),
-		'contactperson_email' => 'servicecenter@hv.se',
-		'errorurl' => 'https://error.swamid.se/?errorurl_code=ERRORURL_CODE&errorurl_ts=ERRORURL_TS&errorurl_rp=ERRORURL_RP&errorurl_tid=ERRORURL_TID&errorurl_ctx=ERRORURL_CTX&entityid=http://adfs.hv.se/adfs/services/trust',
 	),
 	'http://adfs.sp.se/adfs/services/trust' => array(
 		'displayname' => array(
