@@ -150,6 +150,7 @@ $helpdesks = array(
 			'en' => 'eduID Sweden',
 		),
 		'contactperson_email' => 'support@eduid.se',
+		'errorurl' => 'https://error.swamid.se/?errorurl_code=ERRORURL_CODE&errorurl_ts=ERRORURL_TS&errorurl_rp=ERRORURL_RP&errorurl_tid=ERRORURL_TID&errorurl_ctx=ERRORURL_CTX&entityid=https://login.idp.eduid.se/idp.xml',
 	),
 	'https://idp3.sics.se/idp/shibboleth' => array(
 		'displayname' => array(
@@ -252,6 +253,7 @@ $helpdesks = array(
 			'en' => 'SUNET',
 		),
 		'contactperson_email' => 'noc@sunet.se',
+		'errorurl' => 'https://error.swamid.se/?errorurl_code=ERRORURL_CODE&errorurl_ts=ERRORURL_TS&errorurl_rp=ERRORURL_RP&errorurl_tid=ERRORURL_TID&errorurl_ctx=ERRORURL_CTX&entityid=https://idp.sunet.se/idp',
 	),
 	'https://idp.ltu.se/idp/shibboleth' => array(
 		'displayname' => array(
@@ -259,7 +261,7 @@ $helpdesks = array(
 			'en' => 'Lulea University of Technology',
 		),
 		'contactperson_email' => 'its-idp@list.ltu.se',
-		'errorurl' => 'https://error.swamid.se/?errorurl_code=ERRORURL_CODE&errorurl_ts=ERRORURL_TS&errorurl_rp=ERRORURL_RP&errorurl_tid=ERRORURL_TID&errorurl_ctx=ERRORURL_CTX&entityid=https://idp.ltu.se/idp/shibboleth',
+		'errorurl' => 'https://www.ltu.se/ltu/it-support/loginerror-1.207338',
 	),
 	'https://idp.hh.se/idp/shibboleth' => array(
 		'displayname' => array(
@@ -299,6 +301,7 @@ $helpdesks = array(
 			'en' => 'KTH Royal Institute of Technology',
 		),
 		'contactperson_email' => 'it-support@kth.se',
+		'errorurl' => 'https://error.swamid.se/?errorurl_code=ERRORURL_CODE&errorurl_ts=ERRORURL_TS&errorurl_rp=ERRORURL_RP&errorurl_tid=ERRORURL_TID&errorurl_ctx=ERRORURL_CTX&entityid=https://saml.sys.kth.se/idp/shibboleth',
 	),
 	'https://login.ki.se/idp/shibboleth' => array(
 		'displayname' => array(
