@@ -455,6 +455,13 @@ $helpdesks = array(
 		'contactperson_email' => 'ITsupport@kb.se',
 		'errorurl' => 'https://error.swamid.se/?errorurl_code=ERRORURL_CODE&errorurl_ts=ERRORURL_TS&errorurl_rp=ERRORURL_RP&errorurl_tid=ERRORURL_TID&errorurl_ctx=ERRORURL_CTX&entityid=http://adfs.kb.se/adfs/services/trust',
 	),
+	'https://swamid.vr.se/idp/shibboleth' => array(
+		'displayname' => array(
+			'sv' => 'Vetenskapsrådet (gammal)',
+			'en' => 'The Swedish Research Council (old)',
+		),
+		'errorurl' => 'https://error.swamid.se/?errorurl_code=ERRORURL_CODE&errorurl_ts=ERRORURL_TS&errorurl_rp=ERRORURL_RP&errorurl_tid=ERRORURL_TID&errorurl_ctx=ERRORURL_CTX&entityid=https://swamid.vr.se/idp/shibboleth',
+	),
 );
 
 ?>
