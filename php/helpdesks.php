@@ -330,7 +330,7 @@ $helpdesks = array(
 	'http://adfs.umu.se/adfs/services/trust' => array(
 		'displayname' => array(
 			'sv' => 'Umeå universitet',
-			'en' => 'Umeå University',
+			'en' => 'Umea University',
 		),
 		'contactperson_email' => 'datordrift@its.umu.se',
 		'errorurl' => 'https://administrationsverktyg.umu.se/ErrorUrl/?errorurl_code=ERRORURL_CODE&errorurl_ts=ERRORURL_TS&errorurl_rp=ERRORURL_RP&errorurl_tid=ERRORURL_TID&errorurl_ctx=ERRORURL_CTX',
