@@ -40,7 +40,7 @@
                 {
                     <p>@Html.Raw(s) </p>
                 }
-                <p>@Html.DisplayFor(model => model.ContactInfo)</p>
+                <p>@Html.Raw(Model.ContactInfo)</p>
                 @if (Model.Parameters.HaveDetails())
                 {
 

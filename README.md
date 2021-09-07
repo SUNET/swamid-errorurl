@@ -1,6 +1,6 @@
 # swamid-errorurl
 
-This is the SWAMID errorURL template, implementing the [SAML V2.0 Metadata Deployment Profile for errorURL Version 1.0](https://refeds.org/specifications/saml-v2-0-metadata-deployment-profile-for-errorurl-version-1-0).
+This is the SWAMID errorURL template, implementing the [SAML V2.0 Metadata Deployment Profile for errorURL Version 1.0](https://refeds.org/specifications/errorurl-v1).
 
 Feel free to clone this repository, modify for you own needs and publish as the errorURL of your own Identity Provider.
 
