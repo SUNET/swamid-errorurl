@@ -65,13 +65,13 @@ $helpdesks = array(
 		'contactperson_email' => 'itsupport@oru.se',
 		'errorurl' => 'https://error.swamid.se/?errorurl_code=ERRORURL_CODE&errorurl_ts=ERRORURL_TS&errorurl_rp=ERRORURL_RP&errorurl_tid=ERRORURL_TID&errorurl_ctx=ERRORURL_CTX&entityid=https://shib-idp-2.oru.se/idp/shibboleth',
 	),
-	'https://idp.kb.se/idp/shibboleth' => array(
+	'http://adfs.kb.se/adfs/services/trust' => array(
 		'displayname' => array(
-			'sv' => 'Kungliga biblioteket TEST',
-			'en' => 'National Library of Sweden TEST',
+			'sv' => 'Kungliga biblioteket',
+			'en' => 'National Library of Sweden',
 		),
-		'contactperson_email' => 'swamid@kb.se',
-		'errorurl' => 'https://error.swamid.se/?errorurl_code=ERRORURL_CODE&errorurl_ts=ERRORURL_TS&errorurl_rp=ERRORURL_RP&errorurl_tid=ERRORURL_TID&errorurl_ctx=ERRORURL_CTX&entityid=https://idp.kb.se/idp/shibboleth',
+		'contactperson_email' => 'ITsupport@kb.se',
+		'errorurl' => 'https://error.swamid.se/?errorurl_code=ERRORURL_CODE&errorurl_ts=ERRORURL_TS&errorurl_rp=ERRORURL_RP&errorurl_tid=ERRORURL_TID&errorurl_ctx=ERRORURL_CTX&entityid=http://adfs.kb.se/adfs/services/trust',
 	),
 	'https://miunidp.miun.se/idp/shibboleth' => array(
 		'displayname' => array(
@@ -126,7 +126,7 @@ $helpdesks = array(
 			'en' => 'Linköping University',
 		),
 		'contactperson_email' => 'helpdesk@liu.se',
-		'errorurl' => 'https://error.swamid.se/?errorurl_code=ERRORURL_CODE&errorurl_ts=ERRORURL_TS&errorurl_rp=ERRORURL_RP&errorurl_tid=ERRORURL_TID&errorurl_ctx=ERRORURL_CTX&entityid=http://fs.liu.se/adfs/services/trust',
+		'errorurl' => 'https://liu-errorurl-prod-wa.azurewebsites.net/?errorurl_code=ERRORURL_CODE&errorurl_ts=ERRORURL_TS&errorurl_rp=ERRORURL_RP&errorurl_tid=ERRORURL_TID&errorurl_ctx=ERRORURL_CTX',
 	),
 	'https://weblogin.uu.se/idp/shibboleth' => array(
 		'displayname' => array(
@@ -176,13 +176,13 @@ $helpdesks = array(
 		'contactperson_email' => 'netsupport@konstfack.se',
 		'errorurl' => 'https://error.swamid.se/?errorurl_code=ERRORURL_CODE&errorurl_ts=ERRORURL_TS&errorurl_rp=ERRORURL_RP&errorurl_tid=ERRORURL_TID&errorurl_ctx=ERRORURL_CTX&entityid=https://idp-v2.konstfack.se/adfs/services/trust',
 	),
-	'https://idpv3.lu.se/idp/shibboleth' => array(
+	'https://idpv4.lu.se/idp/shibboleth' => array(
 		'displayname' => array(
 			'sv' => 'Lunds universitet',
 			'en' => 'Lund University',
 		),
 		'contactperson_email' => 'servicedesk@lu.se',
-		'errorurl' => 'https://error.swamid.se/?errorurl_code=ERRORURL_CODE&errorurl_ts=ERRORURL_TS&errorurl_rp=ERRORURL_RP&errorurl_tid=ERRORURL_TID&errorurl_ctx=ERRORURL_CTX&entityid=https://idpv3.lu.se/idp/shibboleth',
+		'errorurl' => 'https://error.swamid.se/?errorurl_code=ERRORURL_CODE&errorurl_ts=ERRORURL_TS&errorurl_rp=ERRORURL_RP&errorurl_tid=ERRORURL_TID&errorurl_ctx=ERRORURL_CTX&entityid=https://idpv4.lu.se/idp/shibboleth',
 	),
 	'https://idp2.bth.se/idp/shibboleth' => array(
 		'displayname' => array(
@@ -335,13 +335,13 @@ $helpdesks = array(
 		'contactperson_email' => 'datordrift@its.umu.se',
 		'errorurl' => 'https://administrationsverktyg.umu.se/ErrorUrl/?errorurl_code=ERRORURL_CODE&errorurl_ts=ERRORURL_TS&errorurl_rp=ERRORURL_RP&errorurl_tid=ERRORURL_TID&errorurl_ctx=ERRORURL_CTX',
 	),
-	'http://adfs.nrm.se/adfs/services/trust' => array(
+	'http://fs.nrm.se/adfs/services/trust' => array(
 		'displayname' => array(
 			'sv' => 'Naturhistoriska riksmuseet',
 			'en' => 'Swedish Museum of Natural History',
 		),
 		'contactperson_email' => 'support@nrm.se',
-		'errorurl' => 'https://error.swamid.se/?errorurl_code=ERRORURL_CODE&errorurl_ts=ERRORURL_TS&errorurl_rp=ERRORURL_RP&errorurl_tid=ERRORURL_TID&errorurl_ctx=ERRORURL_CTX&entityid=http://adfs.nrm.se/adfs/services/trust',
+		'errorurl' => 'https://error.swamid.se/?errorurl_code=ERRORURL_CODE&errorurl_ts=ERRORURL_TS&errorurl_rp=ERRORURL_RP&errorurl_tid=ERRORURL_TID&errorurl_ctx=ERRORURL_CTX&entityid=http://fs.nrm.se/adfs/services/trust',
 	),
 	'http://webproxysrv.uniarts.se/adfs/services/trust' => array(
 		'displayname' => array(
@@ -389,7 +389,7 @@ $helpdesks = array(
 			'en' => 'Swedish University of Agricultural Science',
 		),
 		'contactperson_email' => 'IT-stod@slu.se',
-		'errorurl' => 'https://error.swamid.se/?errorurl_code=ERRORURL_CODE&errorurl_ts=ERRORURL_TS&errorurl_rp=ERRORURL_RP&errorurl_tid=ERRORURL_TID&errorurl_ctx=ERRORURL_CTX&entityid=https://idp-shib.slu.se/idp',
+		'errorurl' => 'https://saml-error.slu.se/?errorurl_code=ERRORURL_CODE&errorurl_ts=ERRORURL_TS&errorurl_rp=ERRORURL_RP&errorurl_tid=ERRORURL_TID&errorurl_ctx=ERRORURL_CTX',
 	),
 	'http://idp.vr.se/adfs/services/trust' => array(
 		'displayname' => array(
@@ -398,6 +398,22 @@ $helpdesks = array(
 		),
 		'contactperson_email' => 'Anders.Flodell@vr.se',
 		'errorurl' => 'https://error.swamid.se/?errorurl_code=ERRORURL_CODE&errorurl_ts=ERRORURL_TS&errorurl_rp=ERRORURL_RP&errorurl_tid=ERRORURL_TID&errorurl_ctx=ERRORURL_CTX&entityid=http://idp.vr.se/adfs/services/trust',
+	),
+	'http://adfs.hv.se/adfs/services/trust' => array(
+		'displayname' => array(
+			'sv' => 'Högskolan Väst ny',
+			'en' => 'University West new',
+		),
+		'contactperson_email' => 'servicecenter@hv.se',
+		'errorurl' => 'https://error.swamid.se/?errorurl_code=ERRORURL_CODE&errorurl_ts=ERRORURL_TS&errorurl_rp=ERRORURL_RP&errorurl_tid=ERRORURL_TID&errorurl_ctx=ERRORURL_CTX&entityid=http://adfs.hv.se/adfs/services/trust',
+	),
+	'http://adfs.sp.se/adfs/services/trust' => array(
+		'displayname' => array(
+			'sv' => 'RISE Research Institutes of Sweden',
+			'en' => 'RISE Research Institutes of Sweden',
+		),
+		'contactperson_email' => 'support.it@ri.se',
+		'errorurl' => 'https://error.swamid.se/?errorurl_code=ERRORURL_CODE&errorurl_ts=ERRORURL_TS&errorurl_rp=ERRORURL_RP&errorurl_tid=ERRORURL_TID&errorurl_ctx=ERRORURL_CTX&entityid=http://adfs.sp.se/adfs/services/trust',
 	),
 	'https://shibboleth.uhr.se/idp/shibboleth' => array(
 		'displayname' => array(
@@ -423,37 +439,21 @@ $helpdesks = array(
 		'contactperson_email' => 'appldrift_saml@uhr.se',
 		'errorurl' => 'https://error.swamid.se/?errorurl_code=ERRORURL_CODE&errorurl_ts=ERRORURL_TS&errorurl_rp=ERRORURL_RP&errorurl_tid=ERRORURL_TID&errorurl_ctx=ERRORURL_CTX&entityid=https://idp.antagning.se/aws-idp',
 	),
-	'http://adfs.sp.se/adfs/services/trust' => array(
+	'https://idpv3.lu.se/idp/shibboleth' => array(
 		'displayname' => array(
-			'sv' => 'RISE Research Institutes of Sweden',
-			'en' => 'RISE Research Institutes of Sweden',
-		),
-		'contactperson_email' => 'support.it@ri.se',
-		'errorurl' => 'https://error.swamid.se/?errorurl_code=ERRORURL_CODE&errorurl_ts=ERRORURL_TS&errorurl_rp=ERRORURL_RP&errorurl_tid=ERRORURL_TID&errorurl_ctx=ERRORURL_CTX&entityid=http://adfs.sp.se/adfs/services/trust',
-	),
-	'https://idpv4.lu.se/idp/shibboleth' => array(
-		'displayname' => array(
-			'sv' => 'Lunds universitet - TEST',
-			'en' => 'Lund University - TEST',
+			'sv' => 'Lunds universitet (IdP v3 - under avveckling)',
+			'en' => 'Lund University (IdP v3 - decommisioned)',
 		),
 		'contactperson_email' => 'servicedesk@lu.se',
-		'errorurl' => 'https://error.swamid.se/?errorurl_code=ERRORURL_CODE&errorurl_ts=ERRORURL_TS&errorurl_rp=ERRORURL_RP&errorurl_tid=ERRORURL_TID&errorurl_ctx=ERRORURL_CTX&entityid=https://idpv4.lu.se/idp/shibboleth',
+		'errorurl' => 'https://error.swamid.se/?errorurl_code=ERRORURL_CODE&errorurl_ts=ERRORURL_TS&errorurl_rp=ERRORURL_RP&errorurl_tid=ERRORURL_TID&errorurl_ctx=ERRORURL_CTX&entityid=https://idpv3.lu.se/idp/shibboleth',
 	),
 	'http://sts.vinnova.se/adfs/services/trust' => array(
 		'displayname' => array(
-			'sv' => 'Vinnova',
-			'en' => 'Vinnova',
+			'sv' => 'Forte Formas SNSA SSF Vinnova',
+			'en' => 'Forte Formas SNSA SSF Vinnova',
 		),
 		'contactperson_email' => 'helpdesk@vinnova.se',
 		'errorurl' => 'https://error.swamid.se/?errorurl_code=ERRORURL_CODE&errorurl_ts=ERRORURL_TS&errorurl_rp=ERRORURL_RP&errorurl_tid=ERRORURL_TID&errorurl_ctx=ERRORURL_CTX&entityid=http://sts.vinnova.se/adfs/services/trust',
-	),
-	'http://adfs.kb.se/adfs/services/trust' => array(
-		'displayname' => array(
-			'sv' => 'Kungliga biblioteket',
-			'en' => 'National Library of Sweden',
-		),
-		'contactperson_email' => 'ITsupport@kb.se',
-		'errorurl' => 'https://error.swamid.se/?errorurl_code=ERRORURL_CODE&errorurl_ts=ERRORURL_TS&errorurl_rp=ERRORURL_RP&errorurl_tid=ERRORURL_TID&errorurl_ctx=ERRORURL_CTX&entityid=http://adfs.kb.se/adfs/services/trust',
 	),
 	'https://swamid.vr.se/idp/shibboleth' => array(
 		'displayname' => array(
@@ -461,6 +461,14 @@ $helpdesks = array(
 			'en' => 'The Swedish Research Council (old)',
 		),
 		'errorurl' => 'https://error.swamid.se/?errorurl_code=ERRORURL_CODE&errorurl_ts=ERRORURL_TS&errorurl_rp=ERRORURL_RP&errorurl_tid=ERRORURL_TID&errorurl_ctx=ERRORURL_CTX&entityid=https://swamid.vr.se/idp/shibboleth',
+	),
+	'http://fs.bth.se/adfs/services/trust' => array(
+		'displayname' => array(
+			'sv' => 'Blekinge Tekniska Högskola - ADFS',
+			'en' => 'Blekinge Institute of Technology - ADFS',
+		),
+		'contactperson_email' => 'ithelpdesk@bth.se',
+		'errorurl' => 'https://error.swamid.se/?errorurl_code=ERRORURL_CODE&errorurl_ts=ERRORURL_TS&errorurl_rp=ERRORURL_RP&errorurl_tid=ERRORURL_TID&errorurl_ctx=ERRORURL_CTX&entityid=http://fs.bth.se/adfs/services/trust',
 	),
 );
 
