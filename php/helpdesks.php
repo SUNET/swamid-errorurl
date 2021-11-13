@@ -152,14 +152,6 @@ $helpdesks = array(
 		'contactperson_email' => 'support@eduid.se',
 		'errorurl' => 'https://error.swamid.se/?errorurl_code=ERRORURL_CODE&errorurl_ts=ERRORURL_TS&errorurl_rp=ERRORURL_RP&errorurl_tid=ERRORURL_TID&errorurl_ctx=ERRORURL_CTX&entityid=https://login.idp.eduid.se/idp.xml',
 	),
-	'https://idp3.sics.se/idp/shibboleth' => array(
-		'displayname' => array(
-			'sv' => 'SICS',
-			'en' => 'SICS',
-		),
-		'contactperson_email' => 'support.it@ri.se',
-		'errorurl' => 'https://error.swamid.se/?errorurl_code=ERRORURL_CODE&errorurl_ts=ERRORURL_TS&errorurl_rp=ERRORURL_RP&errorurl_tid=ERRORURL_TID&errorurl_ctx=ERRORURL_CTX&entityid=https://idp3.sics.se/idp/shibboleth',
-	),
 	'https://idp2.kkh.se/idp/shibboleth' => array(
 		'displayname' => array(
 			'sv' => 'Kungl. Konsthögskolan',
@@ -186,8 +178,8 @@ $helpdesks = array(
 	),
 	'https://idp2.bth.se/idp/shibboleth' => array(
 		'displayname' => array(
-			'sv' => 'Blekinge Tekniska Högskola',
-			'en' => 'Blekinge Institute of Technology',
+			'sv' => 'Blekinge Tekniska Högskola - OLD',
+			'en' => 'Blekinge Institute of Technology - OLD',
 		),
 		'contactperson_email' => 'ithelpdesk@bth.se',
 		'errorurl' => 'https://error.swamid.se/?errorurl_code=ERRORURL_CODE&errorurl_ts=ERRORURL_TS&errorurl_rp=ERRORURL_RP&errorurl_tid=ERRORURL_TID&errorurl_ctx=ERRORURL_CTX&entityid=https://idp2.bth.se/idp/shibboleth',
@@ -415,6 +407,22 @@ $helpdesks = array(
 		'contactperson_email' => 'support.it@ri.se',
 		'errorurl' => 'https://error.swamid.se/?errorurl_code=ERRORURL_CODE&errorurl_ts=ERRORURL_TS&errorurl_rp=ERRORURL_RP&errorurl_tid=ERRORURL_TID&errorurl_ctx=ERRORURL_CTX&entityid=http://adfs.sp.se/adfs/services/trust',
 	),
+	'http://fs.bth.se/adfs/services/trust' => array(
+		'displayname' => array(
+			'sv' => 'Blekinge Tekniska Högskola',
+			'en' => 'Blekinge Institute of Technology',
+		),
+		'contactperson_email' => 'ithelpdesk@bth.se',
+		'errorurl' => 'https://error.swamid.se/?errorurl_code=ERRORURL_CODE&errorurl_ts=ERRORURL_TS&errorurl_rp=ERRORURL_RP&errorurl_tid=ERRORURL_TID&errorurl_ctx=ERRORURL_CTX&entityid=http://fs.bth.se/adfs/services/trust',
+	),
+	'http://login2.fhs.se/adfs/services/trust' => array(
+		'displayname' => array(
+			'sv' => 'Försvarshögskolan - NEW',
+			'en' => 'Swedish Defence University - NEW',
+		),
+		'contactperson_email' => 'helpdesk@fhs.se',
+		'errorurl' => 'https://error.swamid.se/?errorurl_code=ERRORURL_CODE&errorurl_ts=ERRORURL_TS&errorurl_rp=ERRORURL_RP&errorurl_tid=ERRORURL_TID&errorurl_ctx=ERRORURL_CTX&entityid=http://login2.fhs.se/adfs/services/trust',
+	),
 	'https://shibboleth.uhr.se/idp/shibboleth' => array(
 		'displayname' => array(
 			'sv' => 'Universitets- och högskolerådet',
@@ -461,14 +469,6 @@ $helpdesks = array(
 			'en' => 'The Swedish Research Council (old)',
 		),
 		'errorurl' => 'https://error.swamid.se/?errorurl_code=ERRORURL_CODE&errorurl_ts=ERRORURL_TS&errorurl_rp=ERRORURL_RP&errorurl_tid=ERRORURL_TID&errorurl_ctx=ERRORURL_CTX&entityid=https://swamid.vr.se/idp/shibboleth',
-	),
-	'http://fs.bth.se/adfs/services/trust' => array(
-		'displayname' => array(
-			'sv' => 'Blekinge Tekniska Högskola - ADFS',
-			'en' => 'Blekinge Institute of Technology - ADFS',
-		),
-		'contactperson_email' => 'ithelpdesk@bth.se',
-		'errorurl' => 'https://error.swamid.se/?errorurl_code=ERRORURL_CODE&errorurl_ts=ERRORURL_TS&errorurl_rp=ERRORURL_RP&errorurl_tid=ERRORURL_TID&errorurl_ctx=ERRORURL_CTX&entityid=http://fs.bth.se/adfs/services/trust',
 	),
 );
 
