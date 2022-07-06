@@ -77,7 +77,8 @@ EOF
 	rm -f metadata.tmp
 }
 
-get_helpdesks https://mds.swamid.se/md/swamid-idp.xml > helpdesks.php.tmp || exit 1
+#get_helpdesks https://mds.swamid.se/md/swamid-idp.xml > helpdesks.php.tmp || exit 1
+wget -qO helpdesks.php.tmp https://metadata.swamid.se/getErrorURL.php || exit 1
 # shellcheck disable=SC2002
 if [ "$(cat helpdesks.php.tmp | wc -l)" -lt 20 ] ; then
 	echo "helpdesks.php.tmp too small"
