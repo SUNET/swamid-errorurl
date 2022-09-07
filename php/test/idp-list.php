@@ -14,7 +14,7 @@ function helpdesk_cmp($a, $b)
 
 uasort($helpdesks, "helpdesk_cmp");
 
-$title = "IdP errorURL list";
+$title = "SWAMID IdP errorURL list";
 
 ?>
 <html>
@@ -30,18 +30,6 @@ $title = "IdP errorURL list";
 <h1><?= $title ?></h1>
 <?php
 
-$example_errorurl = array(
-	'' => array(
-		'displayname' => array(
-			'sv' => 'GitHub swamid-errorurl example',
-			'en' => 'GitHub swamid-errorurl example',
-		),
-		'errorurl' => 'https://error.swamid.se/default/?errorurl_code=ERRORURL_CODE&errorurl_ts=ERRORURL_TS&errorurl_rp=ERRORURL_RP&errorurl_tid=ERRORURL_TID&errorurl_ctx=ERRORURL_CTX'
-	)
-);
-
-
-
 foreach (array_merge($example_errorurl, $helpdesks) as $entityid => $data) {
 	$descr = $entityid;
 	if (isset($data['displayname']['sv'])) {
@@ -53,10 +41,10 @@ foreach (array_merge($example_errorurl, $helpdesks) as $entityid => $data) {
 	if (isset($data['errorurl'])) {
 		$errorurl = $data['errorurl'];
 	} else {
-		$errorurl = $default_errorurl . "&entityid=$entityid";
+		$errorurl = "NONE";
 	}
 
-	$testurl = "https://error.swamid.se/test/?errorurl=" . urlencode($errorurl);
+	$testurl = "./?entityid=$entityid";
 
 ?>
 <p><b><?= $desc ?></b><?= ($entityid) ? " (" . $entityid . ")" : "" ?><br>

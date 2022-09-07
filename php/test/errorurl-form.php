@@ -1,13 +1,24 @@
 <?php
 
 include("config.php");
+include("../helpdesks.php");
 
+$errorurl = $default_errorurl;
 if (isset($_POST['errorurl'])) {
 	$errorurl = $_POST['errorurl'];
-} else if (isset($_GET['errorurl'])) {
-	$errorurl = $_GET['errorurl'];
-} else {
-	$errorurl = $default_errorurl;
+} else if (isset($_GET['entityid']) && $_GET['entityid']) {
+	$entityid = $_GET['entityid'];
+	if ($entityid == "example") {
+		$errorurl = $example_errorurl['example']['errorurl'];
+	} else if (isset($helpdesks[$entityid])) {
+		if (isset($helpdesks[$entityid]['errorurl'])) {
+			$errorurl = $helpdesks[$entityid]['errorurl'];
+		} else {
+			$errorurl = "NO_ERRORURL_FOR_ENTITYID $entityid";
+		}
+	} else {
+		$errorurl = "UNKNOWN_ENTITYID";
+	}
 }
 
 ?>
@@ -29,7 +40,7 @@ input[type="text"] {
 </style>
 </head>
 <body>
-<form name=errorurl method=GET target="_top" action="./">
+<form name=errorurl method=POST target="left" action="links.php">
 <input type=text style="width=100%; font-size:small" name=errorurl value="<?= $errorurl ?>"><br>
 <input type=submit value="Set errorURL"> <a href="idp-list.php" target=_top>SWAMID IdP errorURL list</a>
 </form>

@@ -1,13 +1,20 @@
 <?php
 
 include("config.php");
+include("../helpdesks.php");
 
+$errorurl = $default_errorurl;
 if (isset($_POST['errorurl'])) {
 	$errorurl = $_POST['errorurl'];
-} else if (isset($_GET['errorurl'])) {
-	$errorurl = $_GET['errorurl'];
-} else {
-	$errorurl = $default_errorurl;
+} else if (isset($_GET['entityid']) && $_GET['entityid']) {
+	$entityid = $_GET['entityid'];
+	if ($entityid == "example") {
+		$errorurl = $example_errorurl['example']['errorurl'];
+	} else if (isset($helpdesks[$entityid]) && isset($helpdesks[$entityid]['errorurl'])) {
+		$errorurl = $helpdesks[$entityid]['errorurl'];
+	} else {
+		$errorurl = "UNKNOWN_ENTITYID";
+	}
 }
 
 function set_code($errorurl, $errorurl_code)
