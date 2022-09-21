@@ -171,5 +171,25 @@ foreach ($errorurls as $code => $codedef) {
 <span id="resulting_errorurl"><?= wrap_errorurl($errorurl) ?></span>
 </small>
 </code>
+<?php
+
+if ((strpos($errorurl, $this_url_base) === 0)) {
+
+?>
+<script>
+	parent.right.location="<?= $errorurl ?>";
+</script>
+
+<?php
+} else {
+?>
+<script>
+	parent.right.location="right.php";
+</script>
+<?php
+
+}
+
+?>
 </body>
 </html>

@@ -28,10 +28,51 @@ $title = "SWAMID IdP errorURL list";
 <body class="mt-4">
 <div class="container">
 <h1><?= $title ?></h1>
+<ul>
+<li><a href="#swamid">SWAMID</a></li>
+<li><a href="#swamid-testing">SWAMID-testing</a></li>
+</ul>
 <?php
 
+?>
+<h2><a name="swamid">SWAMID</a></h2>
+<?php
 foreach (array_merge($example_errorurl, $helpdesks) as $entityid => $data) {
-	$descr = $entityid;
+	if ($data['feed'] != "SWAMID" && $data['feed'] != "example") {
+		continue;
+	}
+	$desc = $entityid;
+	if (isset($data['displayname']['sv'])) {
+		$desc = $data['displayname']['sv'];
+	} else if (isset($data['displayname']['en'])) {
+		$desc = $data['displayname']['en'];
+	}
+
+	if (isset($data['errorurl'])) {
+		$errorurl = $data['errorurl'];
+	} else {
+		$errorurl = "NONE";
+	}
+
+	$testurl = "./?entityid=$entityid";
+
+?>
+<p><b><?= $desc ?></b><?= ($entityid) ? " (" . $entityid . ")" : "" ?><br>
+errorURL: <code><?= $errorurl ?></code><br>
+<a href="<?= $testurl ?>">Test errorURL</a>
+
+<?php
+
+}
+
+?>
+<h2><a name="swamid-testing">SWAMID-testing</a></h2>
+<?php
+foreach ($helpdesks as $entityid => $data) {
+	if ($data['feed'] != "Testing") {
+		continue;
+	}
+	$desc = $entityid;
 	if (isset($data['displayname']['sv'])) {
 		$desc = $data['displayname']['sv'];
 	} else if (isset($data['displayname']['en'])) {

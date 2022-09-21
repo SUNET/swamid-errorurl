@@ -40,6 +40,7 @@ input[type="text"] {
 </style>
 </head>
 <body>
+errorURL to test:
 <form name=errorurl method=POST target="left" action="links.php">
 <input type=text style="width=100%; font-size:small" name=errorurl value="<?= $errorurl ?>"><br>
 <input type=submit value="Set errorURL"> <a href="idp-list.php" target=_top>SWAMID IdP errorURL list</a>

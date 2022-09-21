@@ -4,6 +4,7 @@ $default_errorurl = 'https://error.swamid.se/?errorurl_code=ERRORURL_CODE&erroru
 
 $example_errorurl = array(
 	'example' => array(
+		'feed' => 'example',
 		'displayname' => array(
 			'sv' => 'GitHub swamid-errorurl example',
 			'en' => 'GitHub swamid-errorurl example',

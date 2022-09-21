@@ -22,7 +22,7 @@ if (isset($_GET['entityid']) && $_GET['entityid']) {
 <head>
 <title>errorURL tester</title>
 </head>
-<frameset rows="80,100%">
+<frameset rows="100,100%">
   <frame name="up" src="errorurl-form.php?entityid=<?= urlencode($entityid) ?>" scrolling=auto>
   <frameset cols="350,100%">
     <frame name="left" src="links.php?entityid=<?= urlencode($entityid) ?>" scrolling=auto>
