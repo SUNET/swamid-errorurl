@@ -1,0 +1,99 @@
+{
+  "common": {
+    "lang": "sv",
+    "langFlag": "swedish.png",
+    "langSelect": "På svenska",
+    "logo": "logo.png",
+    "contactInformation": "Supporten för din organisation, DISPLAYNAME, kan nås via <a href=\"mailto:EMAIL\">EMAIL</a>.",
+    "technicalInformation": "Teknisk information",
+    "footer": ""
+  },
+  "errors": [
+    {
+      "type": "ERRORURL_CODE",
+      "header": "Problem vid inloggning",
+      "body": [ "Inloggning till tjänsten misslyckades. Se nedan för möjliga orsaker och åtgärder." ]
+    },
+    {
+      "type": "IDENTIFICATION_FAILURE",
+      "header": "Attribut saknas",
+      "body": [
+        "Tjänsten du försökte nå fick inte de attribut den behöver för att identifiera dig eller för att personanpassa tjänsten.",
+        "Detta kan bero på att din organisation saknar dessa uppgifter om dig eller att organisationens inloggningstjänst inte är konfigurerat för att skicka attributen till tjänsten du försökte nå.",
+        "Kontakta din organisation och ange vilken tjänst du försökte nå, vilka attribut som saknades om du vet vilka dessa är (tjänsten kan ha berättat detta för er) samt, om möjligt, en skärmdump med eventuella felmeddelanden som tjänsten gav dig inklusive webbadressen högst upp i webbläsaren och motsvarande från denna sida."
+      ]
+    },
+    {
+      "type": "AUTHENTICATION_FAILURE",
+      "header": "Inloggning misslyckades",
+      "body": [
+        "Ett fel uppstod i tjänsten du försökte nå i samband med inloggning.",
+        "Detta kan bero på att ytterligare steg krävs vid inloggning, till exempel användning av tvåfaktorsinloggning. Vänligen försök igen.",
+        "Om du inte lyckas lösa problemet, kontakta din organisation och ange vilken tjänst du försökte nå, eventuella felmeddelande du fick samt, om möjligt, en skärmdump med felmeddelandena inklusive webbadressen högst upp i webbläsaren och motsvarande från denna sida."
+      ]
+    },
+    {
+      "type": "AUTHORIZATION_FAILURE",
+      "header": "Behörighet saknas",
+      "body": [
+        "Du saknar behörighet till tjänsten du försökte nå.",
+        "Typiska behörighetskrav:",
+        "<b>En <i>bekräftad</i> användare, även kallad SWAMID AL2</b><br/>Identiteter bekräftas oftast genom besök i organisationens servicedesk eller motsvarande under uppvisande av legitimation.",
+        "<b>Association till organisationen (även kallat affiliation)</b><br/>Din <i>affiliation</i> beskriver din relation till din organisation. Vanliga <i>affiliations</i> inkluderar <b>student</b> och <b>employee</b>. Om du exempelvis är en student och tjänsten du försökte nå inte fick <i>affiliation</i> <b>student</b> så behöver du kontakta din organisation för att lösa detta.",
+        "<b>En specifik behörighet (även kallat entitlement)</b><br/><i>Entitlements</i> är specifika behörigheter till specifika tjänster. Om du saknar <i>entitlements</i> du anser att du ska ha (d.v.s. att du skall kunna använda tjänsten du försökte nå) så behöver du kontakta din organisation för att rätta till detta.",
+        "Om du anser att du ska ha behörighet till tjänsten, kontakta din organisation och ange vilken tjänst du försökte nå, vilka behörigheter du anser du ska ha, eventuella felmeddelande du fick samt, om möjligt, en skärmdump med felmeddelandena inklusive webbadressen högst upp i webbläsaren och motsvarande från denna sida."
+      ],
+      "context": [
+        {
+          "type": "verified",
+          "identifiers": [
+            "http://www.swamid.se/policy/assurance/al3",
+            "https://refeds.org/assurance/IAP/high",
+            "https://refeds.org/assurance/profile/espresso"
+          ],
+          "header": "Verifierad användare krävs",
+          "body": [
+            "Tjänsten du försökte nå kräver en <i>verifierad</i> användare, även kallad SWAMID AL3.",
+            "Identiteter verifieras oftast genom besök i organisationens servicedesk eller motsvarande under uppvisande av legitimation. Vid inloggning behöver sedan även tvåfaktorsinloggning användas.",
+            "Kontakta din organisation för att verifiera din användare och försök igen. Om du redan är verifierade, kontakta din organisation och ange vilken tjänst du försökte nå, eventuella felmeddelande du fick samt, om möjligt, en skärmdump med felmeddelandena inklusive webbadressen högst upp i webbläsaren och motsvarande från denna sida."
+          ]
+        },
+        {
+          "type": "confirmed",
+          "identifiers": [
+            "http://www.swamid.se/policy/assurance/al2",
+            "https://refeds.org/assurance/IAP/medium",
+            "https://refeds.org/assurance/profile/cappuccino"
+          ],
+          "header": "Bekräftad användare krävs",
+          "body": [
+            "Tjänsten du försökte nå kräver en <i>bekräftad</i> användare, även kallad SWAMID AL2.",
+            "Identiteter bekräftas oftast genom besök i organisationens servicedesk eller motsvarande under uppvisande av legitimation.",
+            "Kontakta din organisation för att bekräfta din användare och försök igen. Om du redan är bekräftad, kontakta din organisation och ange vilken tjänst du försökte nå, eventuella felmeddelande du fick samt, om möjligt, en skärmdump med felmeddelandena inklusive webbadressen högst upp i webbläsaren och motsvarande från denna sida."
+          ]
+        },
+        {
+          "type": "non-confirmed",
+          "identifiers": [
+            "http://www.swamid.se/policy/assurance/al1",
+            "https://refeds.org/assurance/IAP/low"
+          ],
+          "header": "SWAMID basnivå krävs",
+          "body": [
+            "Tjänsten du försökte nå kräver en användare som uppfyller SWAMID:s <i>basnivå</i>, även kallad SWAMID AL1.",
+            "Din användare uppfyller sannolikt detta men din organisations inloggningstjänst kanske inte är konfigurerad att skicka den informationen till tjänsten du försökte nå.",
+            "Kontakta din organisation och ange vilken tjänst du försökte nå, eventuella felmeddelande du fick samt, om möjligt, en skärmdump med felmeddelandena inklusive webbadressen högst upp i webbläsaren och motsvarande från denna sida."
+          ]
+        }
+      ]
+    },
+    {
+      "type": "OTHER_ERROR",
+      "header": "Inloggningsproblem",
+      "body": [
+        "Ett fel uppstod vid inloggning i tjänsten.",
+        "Om du tror att du ska kunna använda tjänsten, kontakta din organisation och ange vilken tjänst du försökte nå, eventuella felmeddelanden du fick samt, om möjligt, en skärmdump med felmeddelandena inklusive webbadressen högst upp i webbläsaren och motsvarande från denna sida."
+      ]
+    }
+  ]
+}

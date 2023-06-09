@@ -7,5 +7,6 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
     <_PublishTargetUrl>C:\temp\swamid-errorurl</_PublishTargetUrl>
+    <History>True|2023-06-08T10:08:41.1600081Z;</History>
   </PropertyGroup>
 </Project>

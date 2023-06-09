@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Conventions;
+﻿//using Microsoft.EntityFrameworkCore.Metadata.Conventions;
 using Swamid.Errorurl.Helpers;
 using System;
 using System.Collections.Generic;
@@ -60,7 +60,7 @@ namespace Swamid.Errorurl.Domain
             {
                 return _errorurl_ctx;
             }
-            set { _errorurl_ctx =StringFunctions.StripString( value); }
+            set { _errorurl_ctx = StringFunctions.StripString(value); }
         }
         public string lang
         {

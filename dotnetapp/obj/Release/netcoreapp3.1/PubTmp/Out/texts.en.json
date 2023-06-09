@@ -1,0 +1,101 @@
+{
+  "common": {
+    "lang": "en",
+    "langFlag": "english.png",
+    "langSelect": "In English",
+    "logo": "logo.png",
+    "contactInformation": "The support of your organisation, DISPLAYNAME, can be reached at <a href=\"mailto:EMAIL\">EMAIL</a>.",
+    "technicalInformation": "Technical information",
+    "footer": ""
+  },
+  "errors": [
+    {
+      "type": "ERRORURL_CODE",
+      "header": "Login failed",
+      "body": [
+        "Login failed at the service you tried to access. Please see below for possible reasons and actions."
+      ]
+    },
+    {
+      "type": "IDENTIFICATION_FAILURE",
+      "header": "Identification failed",
+      "body": [
+        "The service that you tried to access did not get all required attributes for identification and/or personalization.",
+        "This may be because your institution is missing those attributes or that your institution is not configured to release those attributes to the service you tried to access.",
+        "Please contact support at your institution and include the name of the service you tried to access, any missing attributes if you know what they are (the service may have informed you) and, if possible, a screenshot of the error message at the service (including the address bar at the top of the web browser) and also of this message."
+      ]
+    },
+    {
+      "type": "AUTHENTICATION_FAILURE",
+      "header": "Authentication error",
+      "body": [
+        "The service you tried to access failed during the authentication stage.",
+        "This may be because it requires additional steps which did not occur during login (such as using a second factor). Please try again.",
+        "If you cannot resolve the issue yourself, please contact support at your institution and include the name of the service you tried to access, any error information given by the service and, if possible, a screenshot of the error message at the service (including the address bar at the top of the web browser) and also of this message."
+      ]
+    },
+    {
+      "type": "AUTHORIZATION_FAILURE",
+      "header": "Insufficient privileges",
+      "body": [
+        "The service that you tried to access requires privileges that you do not have.",
+        "Typical requirements include:",
+        "<b>A <i>confirmed</i> user account, or \"high\" <i>identity assurance level</i> (AL)</b><br/>To confirm your user account, you need to visit IT Service Desk and identify yourself using your national ID card or passport.",
+        "<b>Affiliation</b><br/>Your <i>affiliation</i> describes your relationship with the Blue Star University. The set of attributes include for example <i>student</i> and <i>employee</i>. If you are a student and the service you tried to access did not receive the <i>student</i> affiliation, please contact IT Service Desk to correct this.",
+        "<b>Some specific entitlements</b><br/>Entitlements are specific privileges at specific services. If you are missing entitlements that you think you should have (e.g. you should be able to access this service), please contact IT Service Desk to resolve this.",
+        "If you think you should have access, please contact support at your institution and include the name of the service you tried to access, any privileges that were noted as missing and, if possible, a screenshot of the error message at the service (including the address bar at the top of the web browser) and also of this message."
+      ],
+      "context": [
+        {
+          "type": "verified",
+          "identifiers": [
+            "http://www.swamid.se/policy/assurance/al3",
+            "https://refeds.org/assurance/IAP/high",
+            "https://refeds.org/assurance/profile/espresso"
+          ],
+          "header": "Verified user account required",
+          "body": [
+            "The service you tried to access requires a <i>verified</i> user account, also known as SWAMID AL3.",
+            "Identities are often verified by visiting the IT service desk of your institution and identifying yourself using your national ID card or passwport. In addition to this two-factor authentication is required during login.",
+            "Please contact support at your institution, verify your user account and try again. If you already are verified, please contact support at your institution and include the name of the service you tried to access, any error information given by the service and, if possible, a screenshot of the error message at the service (including the address bar at the top of the web browser) and also of this message."
+          ]
+        },
+        {
+          "type": "confirmed",
+          "identifiers": [
+            "http://www.swamid.se/policy/assurance/al2",
+            "https://refeds.org/assurance/IAP/medium",
+            "https://refeds.org/assurance/profile/cappuccino"
+          ],
+          "header": "Confirmed user account required",
+          "body": [
+            "The service you tried to access requires a <i>confirmed</i> user account, also known as SWAMID AL2.",
+            "Identities are often confirmed by visiting the IT service desk of your institution and identifying yourself using your national ID card or passwport.",
+            "Please contact support at your institution, confirm your user account and try again. If you already are confirmed, please contact support at your institution and include the name of the service you tried to access, any error information given by the service and, if possible, a screenshot of the error message at the service (including the address bar at the top of the web browser) and also of this message."
+          ]
+        },
+        {
+          "type": "non-confirmed",
+          "identifiers": [
+            "http://www.swamid.se/policy/assurance/al1",
+            "https://refeds.org/assurance/IAP/low"
+          ],
+          "header": "SWAMID base level user account required",
+          "body": [
+            "The service you tried to access requires a user account fulfulling the base level of SWAMID, also known as SWAMID AL1.",
+            "Your user account most likely fulfills this but your institution may not be configured to release this to the service you tried to access.",
+            "Please contact support at your institution and include the name of the service you tried to access, any error information given by the service and, if possible, a screenshot of the error message at the service (including the address bar at the top of the web browser) and also of this message."
+          ]
+        }
+      ]
+    },
+    {
+      "type": "OTHER_ERROR",
+      "header": "Access error",
+      "body": [
+        "An error occurred when accessing the service.",
+        "If you think you should be able to access the service, please contact support at your institution and include the name of the service you tried to access, any error information given by the service and, if possible, a screenshot of the error message at the service (including the address bar at the top of the web browser) and also of this message."
+      ]
+    }
+  ]
+}
