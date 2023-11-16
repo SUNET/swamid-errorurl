@@ -9,6 +9,7 @@ if [ "$(cat helpdesks.php.tmp | wc -l)" -lt 20 ] ; then
 	exit 1
 fi
 
-diff -U 10 helpdesks.php helpdesks.php.tmp
+if [ -f helpdesks.php ]; then
+    diff -U 10 helpdesks.php helpdesks.php.tmp
+fi
 mv helpdesks.php.tmp helpdesks.php
-
