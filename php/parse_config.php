@@ -5,11 +5,11 @@ require("config.php");
 class ErrorURL_Error_ctx
 {
 	private $id;
-	private $identifiers;
+	private $identifiers = array();
 	private $header;
 	private $body;
 
-	function ErrorURL_Error_ctx($id)
+	public function __construct($id)
 	{
 		$this->id = $id;
 		$this->identifiers = array();
@@ -58,7 +58,7 @@ class ErrorURL_Error
 	private $body;
 	private $ctx;
 
-	function ErrorURL_Error($id)
+	public function __construct($id)
 	{
 		$this->id = $id;
 		$this->ctx = array();
