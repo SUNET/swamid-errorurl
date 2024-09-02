@@ -56,7 +56,7 @@
           "header": "Verified user account required",
           "body": [
             "The service you tried to access requires a <i>verified</i> user account, also known as SWAMID AL3.",
-            "Identities are often verified by visiting the IT service desk of your institution and identifying yourself using your national ID card or passwport. In addition to this two-factor authentication is required during login.",
+            "Identities are often verified by visiting the IT service desk of your institution and identifying yourself using your national ID card or passport. In addition to this two-factor authentication is required during login.",
             "Please contact support at your institution, verify your user account and try again. If you already are verified, please contact support at your institution and include the name of the service you tried to access, any error information given by the service and, if possible, a screenshot of the error message at the service (including the address bar at the top of the web browser) and also of this message."
           ]
         },
@@ -70,7 +70,7 @@
           "header": "Confirmed user account required",
           "body": [
             "The service you tried to access requires a <i>confirmed</i> user account, also known as SWAMID AL2.",
-            "Identities are often confirmed by visiting the IT service desk of your institution and identifying yourself using your national ID card or passwport.",
+            "Identities are often confirmed by visiting the IT service desk of your institution and identifying yourself using your national ID card or passport.",
             "Please contact support at your institution, confirm your user account and try again. If you already are confirmed, please contact support at your institution and include the name of the service you tried to access, any error information given by the service and, if possible, a screenshot of the error message at the service (including the address bar at the top of the web browser) and also of this message."
           ]
         },
