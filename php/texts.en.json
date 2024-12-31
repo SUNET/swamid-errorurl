@@ -6,7 +6,7 @@
     "logo": "logo.png",
     "contactInformation": "The support of your organisation, DISPLAYNAME, can be reached at <a href=\"mailto:EMAIL\">EMAIL</a>.",
     "technicalInformation": "Technical information",
-    "footer": "<i>This is a generic error page for federated login (errorURL) within <a href=\"https://www.swamid.se/\">SWAMID</a>. Every organisation in SWAMID may design and publish their own error page. Feel free to use this page as inspiration. More information on errorURL in SWAMID is found at <a href=\"https://wiki.sunet.se/display/SWAMID/Error+Handling+URL+in+SWAMID\">SWAMIDs Wiki</a>.</i>"
+    "footer": "<i>This is a generic error page for federated login (errorURL) within <a href=\"https://www.swamid.se/\">SWAMID</a>. Every organisation in SWAMID may design and publish their own error page. Feel free to use this page as inspiration. For more information on errorURL in SWAMID, consult the <a href=\"https://wiki.sunet.se/display/SWAMID/Error+Handling+URL+in+SWAMID\">SWAMID Wiki</a>.</i>"
   },
   "errors": [
     {
