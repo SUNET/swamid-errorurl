@@ -6,7 +6,7 @@
     "logo": "logo.png",
     "contactInformation": "Supporten för din organisation, DISPLAYNAME, kan nås via <a href=\"mailto:EMAIL\">EMAIL</a>.",
     "technicalInformation": "Teknisk information",
-    "footer": "<i>Detta är en generell felsida för federerad inloggning (errorURL) inom <a href=\"https://www.swamid.se/\">SWAMID</a>. Varje organisation kan skapa en egen felsida. Använd gärna denna sida som inspiration. Kontakta operations@swamid.se för mer information om errorURL i SWAMID.</i>"
+    "footer": "<i>Detta är en generell felsida för federerad inloggning (errorURL) inom <a href=\"https://www.swamid.se/\">SWAMID</a>. Varje organisation kan skapa en egen felsida. Använd gärna denna sida som inspiration. Mer information om errorURL i SWAMID finnd på <a href=\"https://wiki.sunet.se/display/SWAMID/Error+Handling+URL+in+SWAMID\">SWAMIDs Wiki</a>.</i>"
   },
   "errors": [
     {
